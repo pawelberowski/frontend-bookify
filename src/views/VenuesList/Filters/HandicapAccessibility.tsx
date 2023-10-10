@@ -23,7 +23,7 @@ export const HandicapAccessibility = () => {
       <AccordionDetails>
         <Typography>
           {accessibilities.map((accessibility) => (
-            <FormControlLabel control={<Checkbox />} label={accessibility} />
+            <FormControlLabel key={accessibility} control={<Checkbox />} label={accessibility} />
           ))}
         </Typography>
       </AccordionDetails>

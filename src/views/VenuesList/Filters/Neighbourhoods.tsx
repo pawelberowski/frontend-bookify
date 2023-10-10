@@ -23,7 +23,7 @@ export const Neighbourhoods = () => {
       <AccordionDetails>
         <Typography>
           {neighbourhoods.map((neighbourhood) => (
-            <FormControlLabel control={<Checkbox />} label={neighbourhood} />
+            <FormControlLabel key={neighbourhood} control={<Checkbox />} label={neighbourhood} />
           ))}
         </Typography>
       </AccordionDetails>
