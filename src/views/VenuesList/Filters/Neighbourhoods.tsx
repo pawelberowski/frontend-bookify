@@ -9,7 +9,24 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const Neighbourhoods = () => {
-  const neighbourhoods = ["placeholder1", "placeholder2", "placeholder3"];
+  const neighbourhoods = [
+    "lake",
+    "forest",
+    "mountains",
+    "sea",
+    "national park",
+    "park",
+    "mall",
+    "zoo",
+    "church",
+    "old town",
+    "historical monument",
+    "museum",
+    "theatre",
+    "cinema",
+    "amusement park",
+    "restaurant",
+  ];
 
   return (
     <Accordion>
@@ -23,7 +40,11 @@ export const Neighbourhoods = () => {
       <AccordionDetails>
         <Typography>
           {neighbourhoods.map((neighbourhood) => (
-            <FormControlLabel key={neighbourhood} control={<Checkbox />} label={neighbourhood} />
+            <FormControlLabel
+              key={neighbourhood}
+              control={<Checkbox />}
+              label={neighbourhood}
+            />
           ))}
         </Typography>
       </AccordionDetails>

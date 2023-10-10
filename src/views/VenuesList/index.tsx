@@ -9,7 +9,9 @@ export const VenuesList = () => {
   return (
     <Box>
       <Filters />
-      <Box>{venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}</Box>
+      <Box>
+        {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
+      </Box>
     </Box>
   );
 };

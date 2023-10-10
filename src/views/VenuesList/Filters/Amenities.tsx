@@ -9,7 +9,25 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const Amenities = () => {
-  const amenities = ["placeholder1", "placeholder2", "placeholder3"];
+  const generalAmenities = [
+    "fireplace",
+    "speakers",
+    "WiFi",
+    "restaurant",
+    "bar",
+    "pool",
+    "jacuzzi",
+    "garden",
+    "fitness center",
+    "24h reception",
+    "karaoke",
+    "outdoor music",
+    "indoor music",
+    "library",
+    "pet friendly",
+    "playground",
+    "parking",
+  ];
 
   return (
     <Accordion>
@@ -22,8 +40,12 @@ export const Amenities = () => {
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
-          {amenities.map((amenity) => (
-            <FormControlLabel key={amenity} control={<Checkbox />} label={amenity} />
+          {generalAmenities.map((amenity) => (
+            <FormControlLabel
+              key={amenity}
+              control={<Checkbox />}
+              label={amenity}
+            />
           ))}
         </Typography>
       </AccordionDetails>

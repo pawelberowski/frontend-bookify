@@ -12,8 +12,11 @@ export const VenueTile: FC<VenueTileProps> = ({ venue }) => {
   const photos = useVenuePhotos(albumId);
 
   return (
-    <div >
-      <p>{name}{photos?.[0].url}</p>
+    <div>
+      <p>
+        {name}
+        {photos?.[0].url}
+      </p>
       <p>{pricePerNightInEUR}</p>
       <p>{location.name}</p>
       <p>{rating}</p>

@@ -9,7 +9,12 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const HandicapAccessibility = () => {
-  const accessibilities = ["placeholder1", "placeholder2", "placeholder3"];
+  const handicapAccesibilities = [
+    "wheelchair friendly",
+    "blind friendly",
+    "deaf friendly",
+    "short-grown friendly",
+  ];
 
   return (
     <Accordion>
@@ -22,8 +27,12 @@ export const HandicapAccessibility = () => {
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
-          {accessibilities.map((accessibility) => (
-            <FormControlLabel key={accessibility} control={<Checkbox />} label={accessibility} />
+          {handicapAccesibilities.map((accessibility) => (
+            <FormControlLabel
+              key={accessibility}
+              control={<Checkbox />}
+              label={accessibility}
+            />
           ))}
         </Typography>
       </AccordionDetails>
