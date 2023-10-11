@@ -1,7 +1,6 @@
-import { Venue } from "../../../shared/types/Venue.ts";
-import { FC, useState } from "react";
-import { useVenuePhotos } from "./useVenuePhotos.tsx";
-import { Box, IconButton, Paper } from "@mui/material";
+import { Venue } from "../../../../shared/types/Venue.ts";
+import { FC } from "react";
+import { Box, CircularProgress, IconButton, Paper } from "@mui/material";
 import {
   ArrowBackIos,
   ArrowForwardIos,
@@ -9,40 +8,25 @@ import {
 } from "@mui/icons-material";
 import GradeIcon from "@mui/icons-material/Grade";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import { useVenueTile } from "./useVenueTile.tsx";
 
 interface VenueTileProps {
   venue: Venue;
 }
 
 export const VenueTile: FC<VenueTileProps> = ({ venue }) => {
-  const { name, pricePerNightInEUR, location, rating, capacity, albumId } =
-    venue;
-  const photos = useVenuePhotos(albumId);
+  const { name, pricePerNightInEUR, location, rating, capacity } = venue;
+  const { photos, activeStep, handleBack, handleNext } = useVenueTile(venue);
 
-  const [activeStep, setActiveStep] = useState(0);
-  // const maxSteps = photos?.length;
-
-  const handleNext = () => {
-    if (activeStep === photos?.length) {
-      setActiveStep(0);
-      return;
-    }
-    setActiveStep(activeStep + 1);
-  };
-
-  const handleBack = () => {
-    if (activeStep === 0) {
-      setActiveStep(photos?.length ?? 0);
-      return;
-    }
-    setActiveStep(activeStep - 1);
-  };
+  if (!photos) {
+    return <CircularProgress />;
+  }
 
   return (
     <div>
       <Box
         sx={{
-          backgroundImage: `url('${photos?.[activeStep].url}')`,
+          backgroundImage: `url('${photos[activeStep].url}')`,
           backgroundRepeat: "no-repeat",
         }}
       >
