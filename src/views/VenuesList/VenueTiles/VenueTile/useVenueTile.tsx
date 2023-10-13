@@ -1,4 +1,4 @@
-import { useVenuePhotos } from "../useVenuePhotos.tsx";
+import { useVenuePhotos } from "./useVenuePhotos.tsx";
 import { useState } from "react";
 import { Venue } from "../../../../shared/types/Venue.ts";
 
@@ -8,7 +8,7 @@ export const useVenueTile = (venue: Venue) => {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
-    if (activeStep === photos?.length) {
+    if (photos && activeStep === photos?.length - 1) {
       setActiveStep(0);
       return;
     }

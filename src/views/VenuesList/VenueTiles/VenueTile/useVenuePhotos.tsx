@@ -17,6 +17,7 @@ export const useVenuePhotos = (albumId: number) => {
       .then((response) => {
         setPhotos(response.data);
       });
-  }, [albumId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return photos;
 };

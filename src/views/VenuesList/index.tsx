@@ -1,17 +1,16 @@
-import { Box } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { useVenuesList } from "./useVenuesList.tsx";
-import { Filters } from "./Filters/Filters.tsx";
-import { VenueTile } from "./VenueTiles/VenueTile";
+import { Filters } from "./Filters";
+import { VenueTiles } from "./VenueTiles";
+import { VenuesListContainerStyled } from "./VenuesList.styled.tsx";
 
 export const VenuesList = () => {
   const { venues } = useVenuesList();
 
   return (
-    <Box>
+    <VenuesListContainerStyled>
       <Filters />
-      <Box>
-        {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
-      </Box>
-    </Box>
+      {venues ? <VenueTiles venues={venues} /> : <CircularProgress />}
+    </VenuesListContainerStyled>
   );
 };
