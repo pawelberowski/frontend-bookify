@@ -1,20 +1,19 @@
-import { Container } from "@mui/material";
-
-import { PriceRange } from "./PriceRange.tsx";
-import { Amenities } from "./Amenities.tsx";
-import { RoomAmenities } from "./RoomAmenities.tsx";
-import { Neighbourhoods } from "./Neighbourhoods.tsx";
-import { HandicapAccessibility } from "./HandicapAccessibility.tsx";
+import { PriceRange } from "./PriceRange/PriceRange.tsx";
+import { Amenities } from "./Amenities/Amenities.tsx";
+import { RoomAmenities } from "./RoomAmenities/RoomAmenities.tsx";
+import { Neighbourhoods } from "./Neighbourhoods/Neighbourhoods.tsx";
+import { HandicapAccessibility } from "./HandicapAccessibility/HandicapAccessibility.tsx";
+import { FiltersContainer } from "./Filters.styled.tsx";
 
 export const Filters = () => {
   return (
-    <Container>
+    <FiltersContainer>
       <h2>Filters</h2>
       <PriceRange />
       <Amenities />
       <RoomAmenities />
       <Neighbourhoods />
       <HandicapAccessibility />
-    </Container>
+    </FiltersContainer>
   );
 };
