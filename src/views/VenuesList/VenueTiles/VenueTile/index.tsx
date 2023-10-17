@@ -11,19 +11,17 @@ import GradeIcon from "@mui/icons-material/Grade";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import { useVenueTile } from "./useVenueTile.tsx";
 import {
-  ArrowsContainer,
   Capacity,
   FavoriteContainer,
-  FavouriteAndNameContainer,
   LeftArrowIcon,
   Location,
   NameContainer,
   Price,
   PriceAndLocation,
-  PriceAndLocationContainer,
   Rating,
   RatingAndCapacity,
   RightArrowIcon,
+  RowContainer,
   SlidePhotosContainer,
   VenueTileContainer,
 } from "./VenueTile.styled.tsx";
@@ -43,21 +41,21 @@ export const VenueTile: FC<VenueTileProps> = ({ venue }) => {
   return (
     <VenueTileContainer>
       <SlidePhotosContainer imgUrl={photos[activeStep].url}>
-        <FavouriteAndNameContainer>
+        <RowContainer>
           <FavoriteContainer>
             <FavoriteBorder />
           </FavoriteContainer>
           <NameContainer>{name}</NameContainer>
-        </FavouriteAndNameContainer>
-        <ArrowsContainer>
+        </RowContainer>
+        <RowContainer>
           <LeftArrowIcon onClick={handleBack}>
             <ArrowBackIos />
           </LeftArrowIcon>
           <RightArrowIcon onClick={handleNext}>
             <ArrowForwardIos />
           </RightArrowIcon>
-        </ArrowsContainer>
-        <PriceAndLocationContainer>
+        </RowContainer>
+        <RowContainer>
           <PriceAndLocation>
             <Price>{pricePerNightInEUR}</Price>
             <Location>
@@ -65,7 +63,7 @@ export const VenueTile: FC<VenueTileProps> = ({ venue }) => {
               {location.name}
             </Location>
           </PriceAndLocation>
-        </PriceAndLocationContainer>
+        </RowContainer>
       </SlidePhotosContainer>
       <RatingAndCapacity>
         <Rating>

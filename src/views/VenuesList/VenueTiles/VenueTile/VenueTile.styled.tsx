@@ -22,7 +22,7 @@ export const SlidePhotosContainer = styled("div")<SlidePhotosContainer>`
   flex-direction: column;
 `;
 
-export const FavouriteAndNameContainer = styled("div")`
+export const RowContainer = styled("div")`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -54,11 +54,6 @@ export const NameContainer = styled(Box)`
   text-align: end;
 `;
 
-export const ArrowsContainer = styled("div")`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
 export const LeftArrowIcon = styled(IconButton)`
   width: 40px;
   height: 40px;
@@ -69,11 +64,6 @@ export const RightArrowIcon = styled(IconButton)`
   height: 40px;
 `;
 
-export const PriceAndLocationContainer = styled("div")`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
 export const PriceAndLocation = styled("div")`
   display: flex;
   justify-content: center;
