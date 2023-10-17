@@ -1,18 +1,20 @@
-import { FC, PropsWithChildren } from "react";
-import { Header } from "./Header/Header.tsx";
+import { FunctionComponent, PropsWithChildren } from "react";
+import { Header } from "./Header";
 import {
   ContentContainer,
-  HeaderAndContentContainer,
+  FiltersAndContentContainer,
   LayoutContainer,
 } from "./Layout.styled.tsx";
+import { FiltersContainer } from "./FiltersContainer";
 
-export const Layout: FC<PropsWithChildren> = ({ children }) => {
+export const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <LayoutContainer>
-      <HeaderAndContentContainer>
-        <Header />
+      <Header />
+      <FiltersAndContentContainer>
+        <FiltersContainer />
         <ContentContainer>{children}</ContentContainer>
-      </HeaderAndContentContainer>
+      </FiltersAndContentContainer>
     </LayoutContainer>
   );
 };
