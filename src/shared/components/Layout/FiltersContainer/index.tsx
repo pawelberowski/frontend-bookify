@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
+import {Box, Button} from "@mui/material";
 import {
-  FilterContainerStyled,
+  FilterContainerStyled, FilterElementsContainer,
   FiltersBar,
   FilterWrapper,
   Motto,
@@ -12,34 +12,39 @@ import { Add, CalendarToday, Remove, Search } from "@mui/icons-material";
 export const FiltersContainer = () => {
   return (
     <FilterContainerStyled>
-      <Motto>Find your place and experience it together.</Motto>
-      <FiltersBar>
-        <FilterWrapper>
-          <Search />
-          <StyledInput placeholder="localization" />
-        </FilterWrapper>
-        <FilterWrapper>
-          <Search />
-          <StyledInput placeholder="occasion" />
-        </FilterWrapper>
-        <FilterWrapper>
-          <CalendarToday />
-          <StyledInput placeholder="date" />
-        </FilterWrapper>
-        <FilterWrapper>
-          <Remove />
-          <StyledInput placeholder="guests" />
-          <Add />
-        </FilterWrapper>
-        <FilterWrapper>
-          <Search />
-          <StyledInput placeholder="venue type" />
-        </FilterWrapper>
-      </FiltersBar>
-      <Button variant="text">I don't want to be that specific</Button>
-      <SearchButton variant="contained" href="/venues">
-        Search for venue
-      </SearchButton>
+      <FilterElementsContainer>
+        <Motto>Find your place and experience it together.</Motto>
+        <Box>
+          <FiltersBar>
+            <FilterWrapper>
+              <Search />
+              <StyledInput placeholder="localization" />
+            </FilterWrapper>
+            <FilterWrapper>
+              <Search />
+              <StyledInput placeholder="occasion" />
+            </FilterWrapper>
+            <FilterWrapper>
+              <CalendarToday />
+              <StyledInput placeholder="date" />
+            </FilterWrapper>
+            <FilterWrapper>
+              <Remove />
+              <StyledInput placeholder="guests" />
+              <Add />
+            </FilterWrapper>
+            <FilterWrapper>
+              <Search />
+              <StyledInput placeholder="venue type" />
+            </FilterWrapper>
+          </FiltersBar>
+          <Button variant="text">I don't want to be that specific</Button>
+        </Box>
+        <SearchButton variant="contained" href="/venues">
+          Search for venue
+        </SearchButton>
+      </FilterElementsContainer>
+
     </FilterContainerStyled>
   );
 };

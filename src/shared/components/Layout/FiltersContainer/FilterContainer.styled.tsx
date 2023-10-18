@@ -1,25 +1,31 @@
-import { Button, styled } from "@mui/material";
+import { Button, styled} from "@mui/material";
 import heroImageUrl from "/src/shared/assets/hero.svg";
 
 export const FilterContainerStyled = styled("div")`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 524px;
   background-image: url(${heroImageUrl});
   background-size: cover, cover;
 `;
 
-export const Motto = styled("p")`
+export const FilterElementsContainer = styled("div")`
+  height: 65%;
   display: flex;
-  justify-content: space-around;
-  width: 100vw;
+  flex-direction: column;
+  justify-content: space-between;
+`
+export const Motto = styled("p")`
+  width: 100%;
   font-family: Prompt, serif;
   font-size: 35px;
   font-style: normal;
   font-weight: 300;
+  text-align: end;
+  margin-right: 103px; //TODO: repair with theme/spacing
 `;
 
 export const FiltersBar = styled("div")`
