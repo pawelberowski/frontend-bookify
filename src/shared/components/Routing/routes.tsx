@@ -11,12 +11,12 @@ export const routes: Array<Route> = [
   {
     path: RoutesEnum.TilesView,
     Component: <VenuesList />,
-    name: "tiles",
+    name: "venues",
   },
   {
     path: RoutesEnum.DetailedView,
     Component: <DetailedView />,
-    name: "detailed",
+    name: "venueDetails",
   },
   {
     path: RoutesEnum.AboutUs,
