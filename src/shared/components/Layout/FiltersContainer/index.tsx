@@ -1,7 +1,9 @@
-import {Box, Button} from "@mui/material";
+import { Button } from "@mui/material";
 import {
-  FilterContainerStyled, FilterElementsContainer,
+  FilterContainerStyled,
+  FilterElementsContainer,
   FiltersBar,
+  FiltersBarWrapper,
   FilterWrapper,
   Motto,
   SearchButton,
@@ -14,7 +16,7 @@ export const FiltersContainer = () => {
     <FilterContainerStyled>
       <FilterElementsContainer>
         <Motto>Find your place and experience it together.</Motto>
-        <Box>
+        <FiltersBarWrapper>
           <FiltersBar>
             <FilterWrapper>
               <Search />
@@ -39,12 +41,11 @@ export const FiltersContainer = () => {
             </FilterWrapper>
           </FiltersBar>
           <Button variant="text">I don't want to be that specific</Button>
-        </Box>
+        </FiltersBarWrapper>
         <SearchButton variant="contained" href="/venues">
           Search for venue
         </SearchButton>
       </FilterElementsContainer>
-
     </FilterContainerStyled>
   );
 };
