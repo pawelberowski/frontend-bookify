@@ -13,6 +13,7 @@ export const FilterContainerStyled = styled("div")`
 `;
 
 export const FilterElementsContainer = styled("div")`
+  width: 100%;
   height: 65%;
   display: flex;
   flex-direction: column;
@@ -30,6 +31,7 @@ export const Motto = styled("p")`
 `;
 
 export const FiltersBarWrapper = styled("div")`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +40,7 @@ export const FiltersBarWrapper = styled("div")`
 export const FiltersBar = styled("div")`
   display: flex;
   justify-content: space-around;
-  width: 100vw;
+  width: 100%;
 `;
 export const FilterWrapper = styled("div")`
   display: flex;

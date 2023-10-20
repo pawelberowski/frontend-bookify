@@ -7,7 +7,6 @@ export const VenueTileContainer = styled("div")`
   height: 228px;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
 `;
 
 interface SlidePhotosContainer {
@@ -35,7 +34,6 @@ export const FavoriteContainer = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   border-radius: 0 0 8px 0;
   background: rgba(0, 0, 0, 0.6);
 `;
@@ -48,7 +46,6 @@ export const NameContainer = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   border-radius: 0 0 0 18px;
   background: rgba(0, 0, 0, 0.5);
   text-align: end;
@@ -71,7 +68,6 @@ export const PriceAndLocation = styled("div")`
   flex-direction: column;
   min-width: 140px;
   height: 70px;
-  flex-shrink: 0;
   border-radius: 0 18px 0 0;
   background: rgba(0, 0, 0, 0.6);
   align-self: flex-end;
@@ -84,13 +80,13 @@ export const Price = styled("p")`
 export const Location = styled("p")`
   margin: 0 0 0 0;
   white-space: nowrap;
-  float: left;
 `;
 
 export const RatingAndCapacity = styled(Paper)`
+  display: flex;
+  justify-content: space-around;
   width: 282px;
   height: 35px;
-  flex-shrink: 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: #fdfdfd;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
@@ -102,7 +98,6 @@ export const Rating = styled("span")`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
 `;
 
 export const Capacity = styled("span")`
@@ -111,5 +106,4 @@ export const Capacity = styled("span")`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
 `;
