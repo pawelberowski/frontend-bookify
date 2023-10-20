@@ -68,11 +68,13 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
       <RatingAndCapacity>
         <Rating>
           <GradeIcon />
-          rating {rating}
+          <p>rating</p>
+          <p>{rating}</p>
         </Rating>
         <Capacity>
           <PeopleAltIcon />
-          capacity {capacity}
+          <p>capacity</p>
+          <p>{capacity}</p>
         </Capacity>
       </RatingAndCapacity>
     </VenueTileContainer>

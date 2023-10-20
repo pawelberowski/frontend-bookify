@@ -10,7 +10,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const PriceRange = () => {
   const [value, setValue] = useState<number[]>([0, 100]);
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleChange = (_event: Event, newValue: number | number[]) => {
     if (Array.isArray(newValue)) {
       setValue(newValue);
     }

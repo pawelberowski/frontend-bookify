@@ -73,12 +73,9 @@ export const PriceAndLocation = styled("div")`
   align-self: flex-end;
 `;
 
-export const Price = styled("p")`
-  margin: 0 0 0 0;
-`;
+export const Price = styled("p")``;
 
 export const Location = styled("p")`
-  margin: 0 0 0 0;
   white-space: nowrap;
 `;
 
@@ -93,7 +90,7 @@ export const RatingAndCapacity = styled(Paper)`
 `;
 
 export const Rating = styled("span")`
-  display: inline-flex;
+  display: flex;
   height: 35px;
   justify-content: center;
   align-items: center;
@@ -101,7 +98,7 @@ export const Rating = styled("span")`
 `;
 
 export const Capacity = styled("span")`
-  display: inline-flex;
+  display: flex;
   height: 35px;
   justify-content: center;
   align-items: center;

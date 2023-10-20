@@ -1,6 +1,6 @@
 export enum RoutesEnum {
   TilesView = "/venues",
-  DetailedView = "/venue/:id",
+  DetailedView = "/venues/:id",
   AboutUs = "/about",
   YourFavourites = "/favourites",
   StartHosting = "/hosting",
