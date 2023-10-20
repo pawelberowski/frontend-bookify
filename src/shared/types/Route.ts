@@ -1,4 +1,4 @@
-import { ReactElement} from "react";
+import { ReactElement } from "react";
 import { RoutesEnum } from "./Routes.enum";
 
 export interface Route {

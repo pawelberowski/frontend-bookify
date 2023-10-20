@@ -1,0 +1,47 @@
+import { Button, styled } from "@mui/material";
+import heroImageUrl from "/src/shared/assets/hero.svg";
+
+export const FilterContainerStyled = styled("div")`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 524px;
+  background-image: url(${heroImageUrl});
+  background-size: cover, cover;
+`;
+
+export const Motto = styled("p")`
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  font-family: Prompt, serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 300;
+`;
+
+export const FiltersBar = styled("div")`
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+`;
+export const FilterWrapper = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 18px;
+  width: 160px;
+  height: 40px;
+`;
+
+export const StyledInput = styled("input")`
+  border: none;
+  width: 100px;
+`;
+
+export const SearchButton = styled(Button)`
+  border-radius: 18px;
+`;
