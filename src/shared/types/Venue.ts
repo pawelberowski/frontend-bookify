@@ -5,7 +5,7 @@ export interface LocationDetails {
 export interface Venue {
   id: number;
   location: LocationDetails;
-  pricePerNightInEUR: number | string;
+  pricePerNightInEUR: string;
   rating: number;
   capacity: number;
   name: string;

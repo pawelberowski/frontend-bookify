@@ -4,28 +4,43 @@ import heroImageUrl from "/src/shared/assets/hero.svg";
 export const FilterContainerStyled = styled("div")`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 524px;
   background-image: url(${heroImageUrl});
   background-size: cover, cover;
 `;
 
-export const Motto = styled("p")`
+export const FilterElementsContainer = styled("div")`
+  width: 100%;
+  height: 65%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  width: 100vw;
-  font-family: Prompt, serif;
+  align-items: center;
+`;
+export const Motto = styled("p")`
+  color: rgba(0, 0, 0, 0.75);
+  font-family: Prompt, sans-serif;
   font-size: 35px;
   font-style: normal;
   font-weight: 300;
+  align-self: end;
+  margin-right: 103px; //TODO: repair with theme/spacing
+`;
+
+export const FiltersBarWrapper = styled("div")`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const FiltersBar = styled("div")`
   display: flex;
   justify-content: space-around;
-  width: 100vw;
+  width: 100%;
 `;
 export const FilterWrapper = styled("div")`
   display: flex;

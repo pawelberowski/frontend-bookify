@@ -8,13 +8,9 @@ import {
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-function valuetext(value: number) {
-  return `${value}€`;
-}
-
 export const PriceRange = () => {
   const [value, setValue] = useState<number[]>([0, 100]);
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleChange = (_event: Event, newValue: number | number[]) => {
     if (Array.isArray(newValue)) {
       setValue(newValue);
     }
@@ -35,7 +31,6 @@ export const PriceRange = () => {
             value={value}
             onChange={handleChange}
             valueLabelDisplay="on"
-            getAriaValueText={valuetext}
           />
         </Typography>
       </AccordionDetails>

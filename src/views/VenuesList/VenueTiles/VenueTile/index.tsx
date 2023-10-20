@@ -1,5 +1,5 @@
 import { Venue } from "../../../../shared/types/Venue.ts";
-import { FC } from "react";
+import { FunctionComponent } from "react";
 import { CircularProgress } from "@mui/material";
 import {
   ArrowBackIos,
@@ -30,7 +30,7 @@ interface VenueTileProps {
   venue: Venue;
 }
 
-export const VenueTile: FC<VenueTileProps> = ({ venue }) => {
+export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
   const { name, pricePerNightInEUR, location, rating, capacity } = venue;
   const { photos, activeStep, handleBack, handleNext } = useVenueTile(venue);
 
@@ -68,11 +68,13 @@ export const VenueTile: FC<VenueTileProps> = ({ venue }) => {
       <RatingAndCapacity>
         <Rating>
           <GradeIcon />
-          rating {rating}
+          <p>rating</p>
+          <p>{rating}</p>
         </Rating>
         <Capacity>
           <PeopleAltIcon />
-          capacity {capacity}
+          <p>capacity</p>
+          <p>{capacity}</p>
         </Capacity>
       </RatingAndCapacity>
     </VenueTileContainer>
