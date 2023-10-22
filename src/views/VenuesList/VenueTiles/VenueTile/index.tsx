@@ -11,16 +11,14 @@ import GradeIcon from "@mui/icons-material/Grade";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import { useVenueTile } from "./useVenueTile.tsx";
 import {
-  Capacity,
+  ArrowIcon,
   FavoriteContainer,
-  LeftArrowIcon,
-  Location,
+  LocationWrapper,
   NameContainer,
   Price,
   PriceAndLocation,
-  Rating,
-  RatingAndCapacity,
-  RightArrowIcon,
+  RatingAndCapacityContainer,
+  RatingAndCapacityWrapper,
   RowContainer,
   SlidePhotosContainer,
   VenueTileContainer,
@@ -48,35 +46,35 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
           <NameContainer>{name}</NameContainer>
         </RowContainer>
         <RowContainer>
-          <LeftArrowIcon onClick={handleBack}>
+          <ArrowIcon onClick={handleBack}>
             <ArrowBackIos />
-          </LeftArrowIcon>
-          <RightArrowIcon onClick={handleNext}>
+          </ArrowIcon>
+          <ArrowIcon onClick={handleNext}>
             <ArrowForwardIos />
-          </RightArrowIcon>
+          </ArrowIcon>
         </RowContainer>
         <RowContainer>
           <PriceAndLocation>
             <Price>{pricePerNightInEUR}</Price>
-            <Location>
+            <LocationWrapper>
               <Place />
               {location.name}
-            </Location>
+            </LocationWrapper>
           </PriceAndLocation>
         </RowContainer>
       </SlidePhotosContainer>
-      <RatingAndCapacity>
-        <Rating>
+      <RatingAndCapacityContainer>
+        <RatingAndCapacityWrapper>
           <GradeIcon />
           <p>rating</p>
           <p>{rating}</p>
-        </Rating>
-        <Capacity>
+        </RatingAndCapacityWrapper>
+        <RatingAndCapacityWrapper>
           <PeopleAltIcon />
           <p>capacity</p>
           <p>{capacity}</p>
-        </Capacity>
-      </RatingAndCapacity>
+        </RatingAndCapacityWrapper>
+      </RatingAndCapacityContainer>
     </VenueTileContainer>
   );
 };
