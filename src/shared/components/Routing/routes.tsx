@@ -1,6 +1,6 @@
 import { RoutesEnum } from "../../types/Routes.enum";
 import { Route } from "../../types/Route";
-import { DetailedView } from "../../../views/DetailedView/DetailedView";
+import { DetailedView } from "../../../views/DetailedView";
 import { VenuesList } from "../../../views/VenuesList";
 import { AboutUs } from "../../../views/AboutUs";
 import { Favourites } from "../../../views/Favourites";

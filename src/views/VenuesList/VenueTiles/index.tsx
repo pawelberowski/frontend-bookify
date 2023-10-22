@@ -6,6 +6,7 @@ import { VenueTilesContainer } from "./VenueTiles.styled.tsx";
 interface VenueTiles {
   venues: Venue[];
 }
+
 export const VenueTiles: FunctionComponent<VenueTiles> = ({ venues }) => {
   return (
     <VenueTilesContainer>

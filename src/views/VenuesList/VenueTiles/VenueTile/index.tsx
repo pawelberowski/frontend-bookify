@@ -23,6 +23,7 @@ import {
   SlidePhotosContainer,
   VenueTileContainer,
 } from "./VenueTile.styled.tsx";
+import { useNavigate } from "react-router-dom";
 
 interface VenueTileProps {
   venue: Venue;
@@ -32,12 +33,19 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
   const { name, pricePerNightInEUR, location, rating, capacity } = venue;
   const { photos, activeStep, handleBack, handleNext } = useVenueTile(venue);
 
+  const navigate = useNavigate();
+  const handleClick = () => {
+    console.log("clicked");
+    const path = `/venues/${venue.id}`;
+    navigate(path);
+  };
+
   if (!photos) {
     return <CircularProgress />;
   }
 
   return (
-    <VenueTileContainer>
+    <VenueTileContainer onClick={handleClick}>
       <SlidePhotosContainer imgUrl={photos[activeStep].url}>
         <RowContainer>
           <FavoriteContainer>
