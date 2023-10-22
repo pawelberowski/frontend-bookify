@@ -1,7 +1,7 @@
 import { VenueTile } from "./VenueTile";
 import { Venue } from "../../../shared/types/Venue.ts";
 import { FunctionComponent } from "react";
-import { VenueTilesContainer } from "./VenueTile/VenueTiles.styled.tsx";
+import { VenueTilesContainer } from "./VenueTiles.styled.tsx";
 
 interface VenueTiles {
   venues: Venue[];
