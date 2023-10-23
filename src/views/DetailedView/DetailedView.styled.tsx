@@ -1,18 +1,21 @@
-import { Box, Button, styled } from "@mui/material";
+import { Box, Button, Paper, styled } from "@mui/material";
 
 export const DetailedViewContainer = styled(Box)`
   display: flex;
-  gap: 10%;
+  justify-content: space-around;
   font-family: Poppins, sans-serif;
+  margin-top: 24px;
 `;
 
 export const LeftPanelContainer = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   max-width: 60%;
 `;
 
 export const NameAndScoreContainer = styled(Box)`
   display: flex;
-  justify-content: space-between;
 `;
 export const NameAndAddressContainer = styled(Box)``;
 
@@ -38,11 +41,11 @@ export const ReviewsNumberWrapper = styled(Box)`
 `;
 
 export const RatingWrapper = styled(Box)``;
-export const PhotoSliderContainer = styled(Box)``;
 
-export const DisplaySwitchesContainer = styled(Box)`
+export const DisplaySwitchesContainer = styled(Paper)`
   display: flex;
   justify-content: space-around;
+  border-radius: 0;
 `;
 
 export const DisplaySwitchWrapper = styled(Button)`
