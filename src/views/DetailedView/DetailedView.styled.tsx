@@ -53,8 +53,6 @@ export const DisplaySwitchWrapper = styled(Button)`
   letter-spacing: 0.48px;
 `;
 
-export const DisplayContainer = styled(Box)``;
-
 export const RightPanelContainer = styled(Box)``;
 
 export const BookingContainer = styled(Box)``;

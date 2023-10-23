@@ -5,7 +5,6 @@ import {
   BookingContainer,
   ContactContainer,
   DetailedViewContainer,
-  DisplayContainer,
   DisplaySwitchesContainer,
   DisplaySwitchWrapper,
   LabelWrapper,
@@ -20,11 +19,15 @@ import {
   ScoreContainer,
   SocialMediaContainer,
 } from "./DetailedView.styled.tsx";
+import { useCurrentDisplay } from "./useCurrentDisplay.tsx";
+import { DisplayContainer } from "./DisplayContainer";
 
 export const DetailedView = () => {
   const params = useParams();
   const venueId = Number(params.id);
   const { venueDetails } = useVenueDetails(venueId);
+  const { currentDisplay, switchToDescription, switchToGallery, switchToMap } =
+    useCurrentDisplay();
 
   return (
     venueDetails && (
@@ -44,13 +47,17 @@ export const DetailedView = () => {
           </NameAndScoreContainer>
           <PhotoSliderContainer>Placeholder</PhotoSliderContainer>
           <DisplaySwitchesContainer>
-            <DisplaySwitchWrapper variant="text">
+            <DisplaySwitchWrapper variant="text" onClick={switchToDescription}>
               description
             </DisplaySwitchWrapper>
-            <DisplaySwitchWrapper variant="text">gallery</DisplaySwitchWrapper>
-            <DisplaySwitchWrapper variant="text">map</DisplaySwitchWrapper>
+            <DisplaySwitchWrapper variant="text" onClick={switchToGallery}>
+              gallery
+            </DisplaySwitchWrapper>
+            <DisplaySwitchWrapper variant="text" onClick={switchToMap}>
+              map
+            </DisplaySwitchWrapper>
           </DisplaySwitchesContainer>
-          <DisplayContainer>{venueDetails.description}</DisplayContainer>
+          <DisplayContainer currentDisplay={currentDisplay} />
         </LeftPanelContainer>
         <RightPanelContainer>
           <BookingContainer>
