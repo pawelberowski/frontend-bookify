@@ -1,9 +1,8 @@
 import { useVenuePhotos } from "./useVenuePhotos.tsx";
 import { useState } from "react";
-import { Venue } from "../../../../shared/types/Venue.ts";
 
-export const useVenueTile = (venue: Venue) => {
-  const photos = useVenuePhotos(venue.albumId);
+export const useVenueSlider = (albumId: number) => {
+  const photos = useVenuePhotos(albumId);
 
   const [activeStep, setActiveStep] = useState(0);
 

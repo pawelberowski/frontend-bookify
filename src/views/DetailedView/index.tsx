@@ -12,7 +12,6 @@ import {
   NameAndAddressContainer,
   NameAndScoreContainer,
   NameWrapper,
-  PhotoSliderContainer,
   RatingWrapper,
   ReviewsNumberWrapper,
   RightPanelContainer,
@@ -21,6 +20,7 @@ import {
 } from "./DetailedView.styled.tsx";
 import { useCurrentDisplay } from "./useCurrentDisplay.tsx";
 import { DisplayContainer } from "./DisplayContainer";
+import { PhotoSlider } from "./PhotoSlider";
 
 export const DetailedView = () => {
   const params = useParams();
@@ -45,7 +45,7 @@ export const DetailedView = () => {
               <RatingWrapper>{venueDetails.rating}</RatingWrapper>
             </ScoreContainer>
           </NameAndScoreContainer>
-          <PhotoSliderContainer>Placeholder</PhotoSliderContainer>
+          <PhotoSlider albumId={venueDetails.albumId} />
           <DisplaySwitchesContainer>
             <DisplaySwitchWrapper variant="text" onClick={switchToDescription}>
               description

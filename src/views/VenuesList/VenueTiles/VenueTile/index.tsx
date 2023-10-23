@@ -9,7 +9,7 @@ import {
 } from "@mui/icons-material";
 import GradeIcon from "@mui/icons-material/Grade";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import { useVenueTile } from "./useVenueTile.tsx";
+import { useVenueSlider } from "./useVenueSlider.tsx";
 import {
   ArrowIcon,
   FavoriteContainer,
@@ -30,8 +30,10 @@ interface VenueTileProps {
 }
 
 export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
-  const { name, pricePerNightInEUR, location, rating, capacity } = venue;
-  const { photos, activeStep, handleBack, handleNext } = useVenueTile(venue);
+  const { name, pricePerNightInEUR, location, rating, capacity, albumId } =
+    venue;
+  const { photos, activeStep, handleBack, handleNext } =
+    useVenueSlider(albumId);
 
   const navigate = useNavigate();
   const handleClick = () => {
