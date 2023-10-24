@@ -13,21 +13,18 @@ interface DescriptionContainer {
 export const DescriptionContainer: FunctionComponent<DescriptionContainer> = ({
   venueDetails,
 }) => {
-  const amenitiesString =
-    venueDetails.features.generalAmenities.join() +
-    "," +
-    venueDetails.features.roomAmenities.join() +
-    "," +
-    venueDetails.features.handicapAccesibility.join() +
-    "," +
-    venueDetails.features.neighbourhoods.join();
-  const amenitiesArray = amenitiesString.split(",");
+  const amenities = [
+    ...venueDetails.features.generalAmenities,
+    ...venueDetails.features.roomAmenities,
+    ...venueDetails.features.handicapAccesibility,
+    ...venueDetails.features.neighbourhoods,
+  ];
 
   return (
     <DescriptionPaper square elevation={2}>
       <p>{venueDetails.description}</p>
       <DescriptionDivider variant="middle" />
-      {amenitiesArray && <AmenitiesList amenities={amenitiesArray} />}
+      {amenities && <AmenitiesList amenities={amenities} />}
       <DescriptionDivider variant="middle" />
       <StayingDetails venueDetails={venueDetails} />
     </DescriptionPaper>
