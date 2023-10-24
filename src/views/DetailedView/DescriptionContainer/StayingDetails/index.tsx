@@ -11,19 +11,19 @@ export const StayingDetails: FunctionComponent<Props> = ({ venueDetails }) => {
     <List>
       <ListItem>
         <ListItemIcon>
-          <Bed />
+          <Bed style={{ color: "black" }} />
         </ListItemIcon>
         {`${venueDetails.sleepingDetails.maxCapacity} sleeping places - ${venueDetails.sleepingDetails.amountOfBeds} beds`}
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <AccessTime />
+          <AccessTime style={{ color: "black" }} />
         </ListItemIcon>
         {`check-in ${venueDetails.checkInHour} / check-out ${venueDetails.checkOutHour}`}
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <LocationCity />
+          <LocationCity style={{ color: "black" }} />
         </ListItemIcon>
         {`${venueDetails.distanceFromCityCenterInKM} km to the city`}
       </ListItem>

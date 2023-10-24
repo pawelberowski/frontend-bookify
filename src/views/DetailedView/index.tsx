@@ -46,7 +46,7 @@ export const DetailedView = () => {
             </ScoreContainer>
           </NameAndScoreContainer>
           <PhotoSlider albumId={venueDetails.albumId} />
-          <DisplaySwitchesContainer>
+          <DisplaySwitchesContainer square elevation={2}>
             <DisplaySwitchWrapper variant="text" onClick={switchToDescription}>
               description
             </DisplaySwitchWrapper>

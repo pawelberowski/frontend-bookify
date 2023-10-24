@@ -1,8 +1,11 @@
 import { FunctionComponent } from "react";
 import { VenueDetails } from "../../../shared/types/VenueDetails.ts";
-import { Box } from "@mui/material";
 import { AmenitiesList } from "./AmenitiesList";
 import { StayingDetails } from "./StayingDetails";
+import {
+  DescriptionPaper,
+  DescriptionDivider,
+} from "./DescriptionContainer.styled.tsx";
 
 interface DescriptionContainer {
   venueDetails: VenueDetails;
@@ -21,10 +24,12 @@ export const DescriptionContainer: FunctionComponent<DescriptionContainer> = ({
   const amenitiesArray = amenitiesString.split(",");
 
   return (
-    <Box>
+    <DescriptionPaper square elevation={2}>
       <p>{venueDetails.description}</p>
+      <DescriptionDivider variant="middle" />
       {amenitiesArray && <AmenitiesList amenities={amenitiesArray} />}
+      <DescriptionDivider variant="middle" />
       <StayingDetails venueDetails={venueDetails} />
-    </Box>
+    </DescriptionPaper>
   );
 };

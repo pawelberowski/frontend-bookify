@@ -45,7 +45,6 @@ export const RatingWrapper = styled(Box)``;
 export const DisplaySwitchesContainer = styled(Paper)`
   display: flex;
   justify-content: space-around;
-  border-radius: 0;
 `;
 
 export const DisplaySwitchWrapper = styled(Button)`
