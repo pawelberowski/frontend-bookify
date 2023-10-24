@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import { VenueDetails } from "../../../shared/types/VenueDetails.ts";
 import { Box } from "@mui/material";
 import { AmenitiesList } from "./AmenitiesList";
+import { StayingDetails } from "./StayingDetails";
 
 interface DescriptionContainer {
   venueDetails: VenueDetails;
@@ -23,6 +24,7 @@ export const DescriptionContainer: FunctionComponent<DescriptionContainer> = ({
     <Box>
       <p>{venueDetails.description}</p>
       {amenitiesArray && <AmenitiesList amenities={amenitiesArray} />}
+      <StayingDetails venueDetails={venueDetails} />
     </Box>
   );
 };
