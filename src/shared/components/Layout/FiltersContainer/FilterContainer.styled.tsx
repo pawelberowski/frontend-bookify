@@ -1,7 +1,7 @@
-import { Button, styled } from "@mui/material";
+import {Box, Button, styled, Typography, TypographyProps} from "@mui/material";
 import heroImageUrl from "/src/shared/assets/hero.svg";
 
-export const FilterContainerStyled = styled("div")`
+export const FilterContainerStyled = styled(Box)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -12,7 +12,7 @@ export const FilterContainerStyled = styled("div")`
   background-size: cover, cover;
 `;
 
-export const FilterElementsContainer = styled("div")`
+export const FilterElementsContainer = styled(Box)`
   width: 100%;
   height: 65%;
   display: flex;
@@ -20,29 +20,26 @@ export const FilterElementsContainer = styled("div")`
   justify-content: space-around;
   align-items: center;
 `;
-export const Motto = styled("p")`
-  color: rgba(0, 0, 0, 0.75);
-  font-family: Prompt, sans-serif;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 300;
+export const Motto = styled((props: TypographyProps) => (
+  <Typography {...props} variant={"h2"} />
+))`
   align-self: end;
   margin-right: 103px; //TODO: repair with theme/spacing
 `;
 
-export const FiltersBarWrapper = styled("div")`
+export const FiltersBarWrapper = styled(Box)`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const FiltersBar = styled("div")`
+export const FiltersBar = styled(Box)`
   display: flex;
   justify-content: space-around;
   width: 100%;
 `;
-export const FilterWrapper = styled("div")`
+export const FilterWrapper = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: center;

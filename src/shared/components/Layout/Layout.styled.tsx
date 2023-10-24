@@ -1,5 +1,4 @@
 import { Box, styled } from "@mui/material";
-import { headerHeight } from "./Header/Header.styled.tsx";
 
 export const LayoutContainer = styled(Box)`
   display: flex;
@@ -9,7 +8,7 @@ export const LayoutContainer = styled(Box)`
   margin-left: auto;
 `;
 export const FiltersAndContentContainer = styled(Box)`
-  margin-top: ${headerHeight}px;
+  margin-top: ${({ theme }) => theme.variables.headerHeight}px;
   width: 100%;
 `;
 

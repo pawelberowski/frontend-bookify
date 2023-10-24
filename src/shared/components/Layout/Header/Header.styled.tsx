@@ -1,8 +1,7 @@
 import { AppBar, Box, styled } from "@mui/material";
 
-export const headerHeight = 40;
 export const StyledAppBar = styled(AppBar)`
-  height: ${headerHeight}px;
+  height: ${({ theme }) => theme.variables.headerHeight}px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
