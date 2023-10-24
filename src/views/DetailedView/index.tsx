@@ -57,7 +57,10 @@ export const DetailedView = () => {
               map
             </DisplaySwitchWrapper>
           </DisplaySwitchesContainer>
-          <DisplayContainer currentDisplay={currentDisplay} />
+          <DisplayContainer
+            currentDisplay={currentDisplay}
+            venueDetails={venueDetails}
+          />
         </LeftPanelContainer>
         <RightPanelContainer>
           <BookingContainer>
