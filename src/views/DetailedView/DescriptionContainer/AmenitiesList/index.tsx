@@ -14,7 +14,7 @@ export const AmenitiesList: FunctionComponent<Props> = ({ amenities }) => {
           <ListItemIcon>
             <Done />
           </ListItemIcon>
-          {amenity}
+          <span>{amenity}</span>
         </ListItem>
       ))}
     </List>

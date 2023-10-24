@@ -1,7 +1,8 @@
-import { List, ListItem, ListItemIcon } from "@mui/material";
+import { List, ListItem } from "@mui/material";
 import { AccessTime, Bed, LocationCity } from "@mui/icons-material";
 import { FunctionComponent } from "react";
 import { VenueDetails } from "../../../../shared/types/VenueDetails.ts";
+import { BlackIcon } from "./StayingDetails.styled.tsx";
 
 interface Props {
   venueDetails: VenueDetails;
@@ -10,22 +11,22 @@ export const StayingDetails: FunctionComponent<Props> = ({ venueDetails }) => {
   return (
     <List>
       <ListItem>
-        <ListItemIcon>
-          <Bed style={{ color: "black" }} />
-        </ListItemIcon>
+        <BlackIcon>
+          <Bed />
+        </BlackIcon>
         {`${venueDetails.sleepingDetails.maxCapacity} sleeping places - ${venueDetails.sleepingDetails.amountOfBeds} beds`}
       </ListItem>
       <ListItem>
-        <ListItemIcon>
-          <AccessTime style={{ color: "black" }} />
-        </ListItemIcon>
-        {`check-in ${venueDetails.checkInHour} / check-out ${venueDetails.checkOutHour}`}
+        <BlackIcon>
+          <AccessTime />
+        </BlackIcon>
+        <span>{`check-in ${venueDetails.checkInHour} / check-out ${venueDetails.checkOutHour}`}</span>
       </ListItem>
       <ListItem>
-        <ListItemIcon>
-          <LocationCity style={{ color: "black" }} />
-        </ListItemIcon>
-        {`${venueDetails.distanceFromCityCenterInKM} km to the city`}
+        <BlackIcon>
+          <LocationCity />
+        </BlackIcon>
+        <span>{`${venueDetails.distanceFromCityCenterInKM} km to the city`}</span>
       </ListItem>
     </List>
   );

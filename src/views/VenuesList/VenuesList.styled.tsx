@@ -1,7 +1,9 @@
 import { Box, styled } from "@mui/material";
 
-export const VenuesListContainerStyled = styled(Box)`
+export const VenuesListContainerStyled = styled(Box)(
+  ({ theme }) => `
   display: flex;
-  padding: 40px;
-  gap: 24px;
-`;
+  padding: ${theme.spacing(10)};
+  gap: ${theme.spacing(6)};
+  `,
+);

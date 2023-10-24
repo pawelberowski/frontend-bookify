@@ -1,18 +1,22 @@
 import { Box, Button, Paper, styled } from "@mui/material";
 
-export const DetailedViewContainer = styled(Box)`
+export const DetailedViewContainer = styled(Box)(
+  ({ theme }) => `
   display: flex;
   justify-content: space-around;
   font-family: Poppins, sans-serif;
-  margin-top: 24px;
-`;
+  margin-top: ${theme.spacing(6)};
+`,
+);
 
-export const LeftPanelContainer = styled(Box)`
+export const LeftPanelContainer = styled(Box)(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 60%;
-`;
+  gap: ${theme.spacing(4)};
+  max-width: 55%;
+`,
+);
 
 export const NameAndScoreContainer = styled(Box)`
   display: flex;
