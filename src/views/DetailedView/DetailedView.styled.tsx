@@ -16,6 +16,7 @@ export const LeftPanelContainer = styled(Box)`
 
 export const NameAndScoreContainer = styled(Box)`
   display: flex;
+  justify-content: space-between;
 `;
 export const NameAndAddressContainer = styled(Box)``;
 
@@ -31,16 +32,20 @@ export const AddressWrapper = styled(Box)`
   letter-spacing: 0.75px;
 `;
 
-export const ScoreContainer = styled(Box)``;
+export const ScoreContainer = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+`;
 
 export const ReviewsNumberWrapper = styled(Box)`
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0.42px;
+  display: flex;
+  justify-content: flex-end;
 `;
-
-export const RatingWrapper = styled(Box)``;
 
 export const DisplaySwitchesContainer = styled(Paper)`
   display: flex;

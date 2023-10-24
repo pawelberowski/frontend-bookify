@@ -12,7 +12,6 @@ import {
   NameAndAddressContainer,
   NameAndScoreContainer,
   NameWrapper,
-  RatingWrapper,
   ReviewsNumberWrapper,
   RightPanelContainer,
   ScoreContainer,
@@ -21,6 +20,7 @@ import {
 import { useCurrentDisplay } from "./useCurrentDisplay.tsx";
 import { DisplayContainer } from "./DisplayContainer";
 import { PhotoSlider } from "./PhotoSlider";
+import { Rating } from "@mui/material";
 
 export const DetailedView = () => {
   const params = useParams();
@@ -42,7 +42,7 @@ export const DetailedView = () => {
               <ReviewsNumberWrapper>
                 {venueDetails.numberOfReviews} reviews
               </ReviewsNumberWrapper>
-              <RatingWrapper>{venueDetails.rating}</RatingWrapper>
+              <Rating value={venueDetails.rating} precision={0.5} readOnly />
             </ScoreContainer>
           </NameAndScoreContainer>
           <PhotoSlider albumId={venueDetails.albumId} />
