@@ -6,17 +6,16 @@ export const FiltersHeaderContainer = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 48px;
 `;
 
 export const Label = styled(Typography)`
   flex: 1;
   display: flex;
   justify-content: center;
+  font-weight: 400;
 `;
 
 export const ResetButton = styled(Button)`
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.48px;
   text-transform: lowercase;
 `;

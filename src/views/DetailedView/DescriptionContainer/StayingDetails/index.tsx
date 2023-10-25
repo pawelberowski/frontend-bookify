@@ -1,4 +1,4 @@
-import { List, ListItem } from "@mui/material";
+import { List, ListItem, Typography } from "@mui/material";
 import { AccessTime, Bed, LocationCity } from "@mui/icons-material";
 import { FunctionComponent } from "react";
 import { VenueDetails } from "../../../../shared/types/VenueDetails.ts";
@@ -14,19 +14,21 @@ export const StayingDetails: FunctionComponent<Props> = ({ venueDetails }) => {
         <BlackIcon>
           <Bed />
         </BlackIcon>
-        {`${venueDetails.sleepingDetails.maxCapacity} sleeping places - ${venueDetails.sleepingDetails.amountOfBeds} beds`}
+        <Typography>
+          {`${venueDetails.sleepingDetails.maxCapacity} sleeping places - ${venueDetails.sleepingDetails.amountOfBeds} beds`}
+        </Typography>
       </ListItem>
       <ListItem>
         <BlackIcon>
           <AccessTime />
         </BlackIcon>
-        <span>{`check-in ${venueDetails.checkInHour} / check-out ${venueDetails.checkOutHour}`}</span>
+        <Typography>{`check-in ${venueDetails.checkInHour} / check-out ${venueDetails.checkOutHour}`}</Typography>
       </ListItem>
       <ListItem>
         <BlackIcon>
           <LocationCity />
         </BlackIcon>
-        <span>{`${venueDetails.distanceFromCityCenterInKM} km to the city`}</span>
+        <Typography>{`${venueDetails.distanceFromCityCenterInKM} km to the city`}</Typography>
       </ListItem>
     </List>
   );

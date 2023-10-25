@@ -47,7 +47,7 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
               <FavoriteBorder />
             </FavoriteContainer>
             <NameContainer>
-              <Typography variant="h4">{name}</Typography>
+              <Typography variant="h5">{name}</Typography>
             </NameContainer>
           </RowContainer>
           <RowContainer>
@@ -60,10 +60,10 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
           </RowContainer>
           <RowContainer>
             <PriceAndLocation>
-              <Typography variant="h4">{pricePerNightInEUR}</Typography>
+              <Typography variant="h5">{pricePerNightInEUR}</Typography>
               <LocationWrapper>
                 <Place />
-                <Typography variant="h6">{location.name}</Typography>
+                <Typography variant="caption">{location.name}</Typography>
               </LocationWrapper>
             </PriceAndLocation>
           </RowContainer>
@@ -71,13 +71,13 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
         <RatingAndCapacityContainer>
           <RatingAndCapacityWrapper>
             <GradeIcon />
-            <Typography variant="h5">rating</Typography>
-            <Typography variant="h5">{rating}</Typography>
+            <Typography variant="h6">rating</Typography>
+            <Typography variant="h6">{rating}</Typography>
           </RatingAndCapacityWrapper>
           <RatingAndCapacityWrapper>
             <PeopleAltIcon />
-            <Typography variant="h5">capacity</Typography>
-            <Typography variant="h5">{capacity}</Typography>
+            <Typography variant="h6">capacity</Typography>
+            <Typography variant="h6">{capacity}</Typography>
           </RatingAndCapacityWrapper>
         </RatingAndCapacityContainer>
       </VenueTileContainer>

@@ -1,4 +1,4 @@
-import { Box, Button, Paper, styled } from "@mui/material";
+import { Box, Button, Paper, styled, Typography } from "@mui/material";
 
 export const DetailedViewContainer = styled(Box)(
   ({ theme }) => `
@@ -23,16 +23,8 @@ export const NameAndScoreContainer = styled(Box)`
 `;
 export const NameAndAddressContainer = styled(Box)``;
 
-export const NameWrapper = styled(Box)`
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-`;
-
-export const AddressWrapper = styled(Box)`
-  font-size: 25px;
+export const AddressWrapper = styled(Typography)`
   font-weight: 400;
-  letter-spacing: 0.75px;
 `;
 
 export const ScoreContainer = styled(Box)`
@@ -41,11 +33,8 @@ export const ScoreContainer = styled(Box)`
   justify-content: flex-end;
 `;
 
-export const ReviewsNumberWrapper = styled(Box)`
-  font-size: 14px;
-  font-weight: 400;
+export const ReviewsNumberWrapper = styled(Typography)`
   line-height: 150%;
-  letter-spacing: 0.42px;
   display: flex;
   justify-content: flex-end;
 `;
@@ -57,10 +46,7 @@ export const DisplaySwitchesContainer = styled(Paper)`
 
 export const DisplaySwitchWrapper = styled(Button)`
   text-transform: lowercase;
-  font-size: 16px;
-  font-weight: 600;
   line-height: 150%;
-  letter-spacing: 0.48px;
 `;
 
 export const RightPanelContainer = styled(Box)``;
@@ -71,4 +57,4 @@ export const ContactContainer = styled(Box)``;
 
 export const SocialMediaContainer = styled(Box)``;
 
-export const LabelWrapper = styled(Box)``;
+export const LabelWrapper = styled(Typography)``;

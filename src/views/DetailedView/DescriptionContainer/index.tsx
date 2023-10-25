@@ -6,6 +6,7 @@ import {
   DescriptionPaper,
   DescriptionDivider,
 } from "./DescriptionContainer.styled.tsx";
+import { Typography } from "@mui/material";
 
 interface DescriptionContainer {
   venueDetails: VenueDetails;
@@ -22,7 +23,7 @@ export const DescriptionContainer: FunctionComponent<DescriptionContainer> = ({
 
   return (
     <DescriptionPaper square elevation={2}>
-      <p>{venueDetails.description}</p>
+      <Typography>{venueDetails.description}</Typography>
       <DescriptionDivider variant="middle" />
       {amenities && <AmenitiesList amenities={amenities} />}
       <DescriptionDivider variant="middle" />

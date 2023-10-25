@@ -53,10 +53,15 @@ export const createBookifyTheme = () => {
         fontWeight: "400",
         letterSpacing: "0.42px",
       },
-      body: {
+      body1: {
         fontSize: "20px",
         fontWeight: "300",
         letterSpacing: "0.6px",
+      },
+      body2: {
+        fontSize: "16px",
+        fontWeight: "400",
+        letterSpacing: "0.48px",
       },
       caption: {
         fontSize: "12px",

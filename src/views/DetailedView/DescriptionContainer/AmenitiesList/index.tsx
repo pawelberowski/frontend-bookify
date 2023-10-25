@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemIcon } from "@mui/material";
+import { List, ListItem, ListItemIcon, Typography } from "@mui/material";
 import { FunctionComponent } from "react";
 import { Done } from "@mui/icons-material";
 
@@ -14,7 +14,7 @@ export const AmenitiesList: FunctionComponent<Props> = ({ amenities }) => {
           <ListItemIcon>
             <Done />
           </ListItemIcon>
-          <span>{amenity}</span>
+          <Typography>{amenity}</Typography>
         </ListItem>
       ))}
     </List>

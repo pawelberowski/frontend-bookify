@@ -11,7 +11,6 @@ import {
   LeftPanelContainer,
   NameAndAddressContainer,
   NameAndScoreContainer,
-  NameWrapper,
   ReviewsNumberWrapper,
   RightPanelContainer,
   ScoreContainer,
@@ -20,7 +19,7 @@ import {
 import { useCurrentDisplay } from "./useCurrentDisplay.tsx";
 import { DisplayContainer } from "./DisplayContainer";
 import { PhotoSlider } from "./PhotoSlider";
-import { Rating } from "@mui/material";
+import { Rating, Typography } from "@mui/material";
 
 export const DetailedView = () => {
   const params = useParams();
@@ -35,11 +34,11 @@ export const DetailedView = () => {
         <LeftPanelContainer>
           <NameAndScoreContainer>
             <NameAndAddressContainer>
-              <NameWrapper>{venueDetails.name}</NameWrapper>
-              <AddressWrapper>{`${venueDetails.location.postalCode}, ${venueDetails.location.name}`}</AddressWrapper>
+              <Typography variant="h3">{venueDetails.name}</Typography>
+              <AddressWrapper variant="h4">{`${venueDetails.location.postalCode}, ${venueDetails.location.name}`}</AddressWrapper>
             </NameAndAddressContainer>
             <ScoreContainer>
-              <ReviewsNumberWrapper>
+              <ReviewsNumberWrapper variant="h6">
                 {venueDetails.numberOfReviews} reviews
               </ReviewsNumberWrapper>
               <Rating value={venueDetails.rating} precision={0.5} readOnly />
@@ -48,13 +47,13 @@ export const DetailedView = () => {
           <PhotoSlider albumId={venueDetails.albumId} />
           <DisplaySwitchesContainer square elevation={2}>
             <DisplaySwitchWrapper variant="text" onClick={switchToDescription}>
-              description
+              <Typography variant="h5">description</Typography>
             </DisplaySwitchWrapper>
             <DisplaySwitchWrapper variant="text" onClick={switchToGallery}>
-              gallery
+              <Typography variant="h5">gallery</Typography>
             </DisplaySwitchWrapper>
             <DisplaySwitchWrapper variant="text" onClick={switchToMap}>
-              map
+              <Typography variant="h5">map</Typography>
             </DisplaySwitchWrapper>
           </DisplaySwitchesContainer>
           <DisplayContainer
@@ -64,13 +63,13 @@ export const DetailedView = () => {
         </LeftPanelContainer>
         <RightPanelContainer>
           <BookingContainer>
-            <LabelWrapper>Book this venue</LabelWrapper>
+            <LabelWrapper variant="h4">Book this venue</LabelWrapper>
           </BookingContainer>
           <ContactContainer>
-            <LabelWrapper>Contact this venue</LabelWrapper>
+            <LabelWrapper variant="h4">Contact this venue</LabelWrapper>
           </ContactContainer>
           <SocialMediaContainer>
-            <LabelWrapper>Check out on social media</LabelWrapper>
+            <LabelWrapper variant="h4">Check out on social media</LabelWrapper>
           </SocialMediaContainer>
         </RightPanelContainer>
       </DetailedViewContainer>
