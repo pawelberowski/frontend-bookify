@@ -10,8 +10,8 @@ export const StyledAppBar = styled(AppBar)`
 export const Logo = styled(Typography)`
   display: flex;
   align-items: center;
-  font-size: 37.278px;
-  font-weight: 200;
+  font-size: 37px;
+  font-weight: 100;
 `;
 
 export const LinksContainer = styled(Box)`
