@@ -1,4 +1,10 @@
-import {Box, Button, styled, Typography, TypographyProps} from "@mui/material";
+import {
+  Box,
+  Button,
+  styled,
+  Typography,
+  TypographyProps,
+} from "@mui/material";
 import heroImageUrl from "/src/shared/assets/hero.svg";
 
 export const FilterContainerStyled = styled(Box)`

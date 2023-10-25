@@ -1,13 +1,12 @@
 import { Box, IconButton, Paper, styled } from "@mui/material";
 
-export const VenueTileContainer = styled("div")`
+export const VenueTileContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 282px;
   height: 228px;
   justify-content: center;
   align-items: center;
-  font-family: Poppins, sans-serif;
   color: white;
 `;
 
@@ -23,68 +22,64 @@ export const SlidePhotosContainer = styled("div")<SlidePhotosContainer>`
   flex-direction: column;
 `;
 
-export const RowContainer = styled("div")`
+export const RowContainer = styled(Box)`
   display: flex;
   justify-content: space-between;
   width: 100%;
 `;
 
-export const FavoriteContainer = styled(Box)`
+export const FavoriteContainer = styled(Box)(
+  ({ theme }) => `
   display: flex;
   width: 32px;
   height: 32px;
-  padding: 8px;
+  padding: ${theme.spacing(2)};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 0 0 8px 0;
   background: rgba(0, 0, 0, 0.6);
-`;
+`,
+);
 
-export const NameContainer = styled(Box)`
+export const NameContainer = styled(Box)(
+  ({ theme }) => `
   display: flex;
   min-width: 154px;
   max-width: 200px;
-  padding: 8px;
+  padding: ${theme.spacing(2)};
   justify-content: center;
   align-items: center;
   border-radius: 0 0 0 18px;
   background: rgba(0, 0, 0, 0.5);
   text-align: end;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  font-weight: 600;
-  letter-spacing: 0.48px;
-`;
+`,
+);
 
 export const ArrowIcon = styled(IconButton)`
   width: 40px;
   height: 40px;
 `;
 
-export const PriceAndLocation = styled("div")`
+export const PriceAndLocation = styled(Box)(
+  ({ theme }) => `
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-width: 140px;
-  padding: 6px;
+  padding: ${theme.spacing(2)};
   height: 70px;
   border-radius: 0 18px 0 0;
   background: rgba(0, 0, 0, 0.6);
-`;
+`,
+);
 
-export const Price = styled("p")`
-  font-weight: 600;
-  letter-spacing: 0.48px;
-`;
-
-export const LocationWrapper = styled("p")`
+export const LocationWrapper = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.36px;
   white-space: nowrap;
 `;
 
@@ -98,10 +93,12 @@ export const RatingAndCapacityContainer = styled(Paper)`
   color: #595959;
 `;
 
-export const RatingAndCapacityWrapper = styled("span")`
+export const RatingAndCapacityWrapper = styled(Box)(
+  ({ theme }) => `
   display: flex;
   height: 35px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-`;
+  gap: ${theme.spacing(2)};
+`,
+);

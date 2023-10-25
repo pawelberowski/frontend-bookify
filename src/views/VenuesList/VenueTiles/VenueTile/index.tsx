@@ -1,6 +1,6 @@
 import { Venue } from "../../../../shared/types/Venue.ts";
 import { FunctionComponent } from "react";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import {
   ArrowBackIos,
   ArrowForwardIos,
@@ -15,7 +15,6 @@ import {
   FavoriteContainer,
   LocationWrapper,
   NameContainer,
-  Price,
   PriceAndLocation,
   RatingAndCapacityContainer,
   RatingAndCapacityWrapper,
@@ -53,7 +52,9 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
           <FavoriteContainer>
             <FavoriteBorder />
           </FavoriteContainer>
-          <NameContainer>{name}</NameContainer>
+          <NameContainer>
+            <Typography variant="h4">{name}</Typography>
+          </NameContainer>
         </RowContainer>
         <RowContainer>
           <ArrowIcon onClick={handleBack}>
@@ -65,10 +66,10 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
         </RowContainer>
         <RowContainer>
           <PriceAndLocation>
-            <Price>{pricePerNightInEUR}</Price>
+            <Typography variant="h4">{pricePerNightInEUR}</Typography>
             <LocationWrapper>
               <Place />
-              {location.name}
+              <Typography variant="h6">{location.name}</Typography>
             </LocationWrapper>
           </PriceAndLocation>
         </RowContainer>
@@ -76,13 +77,13 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
       <RatingAndCapacityContainer>
         <RatingAndCapacityWrapper>
           <GradeIcon />
-          <p>rating</p>
-          <p>{rating}</p>
+          <Typography variant="h5">rating</Typography>
+          <Typography variant="h5">{rating}</Typography>
         </RatingAndCapacityWrapper>
         <RatingAndCapacityWrapper>
           <PeopleAltIcon />
-          <p>capacity</p>
-          <p>{capacity}</p>
+          <Typography variant="h5">capacity</Typography>
+          <Typography variant="h5">{capacity}</Typography>
         </RatingAndCapacityWrapper>
       </RatingAndCapacityContainer>
     </VenueTileContainer>

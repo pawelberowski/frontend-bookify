@@ -16,6 +16,9 @@ export const createBookifyTheme = () => {
     variables: {
       headerHeight: 50,
     },
+    typography: {
+      fontFamily: `"Poppins", sans-serif`,
+    },
   });
   return createTheme(theme, {
     typography: {
@@ -26,12 +29,25 @@ export const createBookifyTheme = () => {
         fontWeight: "500",
         lineHeight: "150%",
       },
-    },
-    components: {
-      MuiTypography: {
-        defaultProps: {
-          fontFamily: `"Poppins", sans-serif`,
-        },
+      h3: {
+        fontSize: "20px",
+        fontWeight: "400",
+        letterSpacing: "0.6px",
+      },
+      h4: {
+        fontSize: "16px",
+        fontWeight: "600",
+        letterSpacing: "0.48px",
+      },
+      h5: {
+        fontSize: "14px",
+        fontWeight: "400",
+        letterSpacing: "0.42px",
+      },
+      h6: {
+        fontSize: "12px",
+        fontWeight: "400",
+        letterSpacing: "0.36px",
       },
     },
   });

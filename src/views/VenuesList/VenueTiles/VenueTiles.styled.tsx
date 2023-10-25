@@ -1,8 +1,10 @@
 import { Box, styled } from "@mui/material";
 
-export const VenueTilesContainer = styled(Box)`
+export const VenueTilesContainer = styled(Box)(
+  ({ theme }) => `
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-`;
+  gap: ${theme.spacing(2)};
+`,
+);

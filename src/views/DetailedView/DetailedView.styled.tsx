@@ -4,7 +4,6 @@ export const DetailedViewContainer = styled(Box)(
   ({ theme }) => `
   display: flex;
   justify-content: space-around;
-  font-family: Poppins, sans-serif;
   margin-top: ${theme.spacing(6)};
 `,
 );

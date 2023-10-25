@@ -1,23 +1,28 @@
-import { LinksContainer, Logo, StyledAppBar } from "./Header.styled.tsx";
-import { Button } from "@mui/material";
+import {
+  LinksContainer,
+  Logo,
+  LowerCaseButton,
+  ShadowButton,
+  StyledAppBar,
+} from "./Header.styled.tsx";
 
 export const Header = () => {
   return (
     <StyledAppBar color="inherit">
       <Logo>BOOKIFY</Logo>
       <LinksContainer>
-        <Button href="/about" color="inherit">
+        <ShadowButton href="/about" color="inherit">
           about us
-        </Button>
-        <Button href="/favourites" color="inherit">
+        </ShadowButton>
+        <LowerCaseButton href="/favourites" color="inherit">
           your favourites
-        </Button>
-        <Button href="/hosting" color="inherit">
+        </LowerCaseButton>
+        <LowerCaseButton href="/hosting" color="inherit">
           start hosting
-        </Button>
-        <Button href="/login" color="primary">
+        </LowerCaseButton>
+        <LowerCaseButton href="/login" color="primary">
           login
-        </Button>
+        </LowerCaseButton>
       </LinksContainer>
     </StyledAppBar>
   );

@@ -29,7 +29,7 @@ export const PhotoSlider: FunctionComponent<Props> = ({ albumId }) => {
   return (
     <PhotoSliderContainer imgUrl={photos[activeStep].url}>
       <FavouriteIconContainer>
-        <FavouriteIconWrapper>
+        <FavouriteIconWrapper color="customGrey">
           <FavoriteBorder />
         </FavouriteIconWrapper>
       </FavouriteIconContainer>

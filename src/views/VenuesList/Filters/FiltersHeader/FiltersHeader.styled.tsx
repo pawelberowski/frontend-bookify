@@ -1,18 +1,14 @@
 import headerImageUrl from "/src/shared/assets/gradient.svg";
-import { Button, styled } from "@mui/material";
+import { Button, styled, Typography } from "@mui/material";
 
 export const FiltersHeaderContainer = styled("div")`
   background-image: url(${headerImageUrl});
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Poppins, sans-serif;
 `;
 
-export const Label = styled("h2")`
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 0.6px;
+export const Label = styled(Typography)`
   flex: 1;
   display: flex;
   justify-content: center;

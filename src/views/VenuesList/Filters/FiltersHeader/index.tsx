@@ -7,7 +7,7 @@ import {
 export const FiltersHeader = () => {
   return (
     <FiltersHeaderContainer>
-      <Label>FILTERS</Label>
+      <Label variant="h3">FILTERS</Label>
       <ResetButton variant="text">reset</ResetButton>
     </FiltersHeaderContainer>
   );
