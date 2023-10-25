@@ -1,4 +1,5 @@
 import { Box, IconButton, Paper, styled } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const VenueTileContainer = styled(Box)`
   display: flex;
@@ -102,3 +103,14 @@ export const RatingAndCapacityWrapper = styled(Box)(
   gap: ${theme.spacing(2)};
 `,
 );
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+`;
