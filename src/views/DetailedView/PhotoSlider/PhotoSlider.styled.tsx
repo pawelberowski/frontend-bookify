@@ -25,6 +25,9 @@ export const FavouriteIconWrapper = styled(Box)`
   justify-content: center;
   align-items: center;
   border-radius: 0 0 8px 0;
+  background-color: ${(props) => {
+    return props.theme.palette.customGrey.main;
+  }};
 `;
 
 export const RowContainer = styled(Box)`
