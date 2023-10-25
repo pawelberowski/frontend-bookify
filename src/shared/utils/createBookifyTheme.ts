@@ -10,6 +10,10 @@ export const createBookifyTheme = () => {
       },
       customGrey: {
         main: "rgba(0, 0, 0, 0.60)",
+        darker: "rgba(0, 0, 0, 0.75)",
+        lighter: "rgba(0, 0, 0, 0.50)",
+        lightest: "rgba(0, 0, 0, 0.25)",
+        contrastText: "#fff",
       },
     },
     spacing: 4,
@@ -23,7 +27,7 @@ export const createBookifyTheme = () => {
   return createTheme(theme, {
     typography: {
       h2: {
-        color: "rgba(0, 0, 0, 0.75)",
+        color: theme.palette.customGrey.darker,
         fontFamily: `"Prompt", sans-serif`,
         fontSize: "40px",
         fontWeight: "500",

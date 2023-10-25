@@ -8,7 +8,9 @@ export const VenueTileContainer = styled(Box)`
   height: 228px;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: ${(props) => {
+    return props.theme.palette.customGrey.contrastText;
+  }};
 `;
 
 interface SlidePhotosContainer {
@@ -39,7 +41,7 @@ export const FavoriteContainer = styled(Box)(
   justify-content: center;
   align-items: center;
   border-radius: 0 0 8px 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: ${theme.palette.customGrey.main};
 `,
 );
 
@@ -52,9 +54,9 @@ export const NameContainer = styled(Box)(
   justify-content: center;
   align-items: center;
   border-radius: 0 0 0 18px;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${theme.palette.customGrey.lighter};
   text-align: end;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 4px ${theme.palette.customGrey.main};
 `,
 );
 
@@ -73,7 +75,7 @@ export const PriceAndLocation = styled(Box)(
   padding: ${theme.spacing(2)};
   height: 70px;
   border-radius: 0 18px 0 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: ${theme.palette.customGrey.main};
 `,
 );
 
@@ -84,15 +86,18 @@ export const LocationWrapper = styled(Box)`
   white-space: nowrap;
 `;
 
-export const RatingAndCapacityContainer = styled(Paper)`
+export const RatingAndCapacityContainer = styled(Paper)(
+  ({ theme }) => `
   display: flex;
   justify-content: space-around;
   width: 282px;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: ${theme.palette.customGrey.lightest};
   border-radius: 0;
   color: #595959;
-`;
+`,
+);
 
 export const RatingAndCapacityWrapper = styled(Box)(
   ({ theme }) => `
