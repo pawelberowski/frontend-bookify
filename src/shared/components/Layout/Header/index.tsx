@@ -5,6 +5,7 @@ import {
   ShadowButton,
   StyledAppBar,
 } from "./Header.styled.tsx";
+import { Typography } from "@mui/material";
 
 export const Header = () => {
   return (
@@ -12,16 +13,16 @@ export const Header = () => {
       <Logo>BOOKIFY</Logo>
       <LinksContainer>
         <ShadowButton href="/about" color="inherit">
-          about us
+          <Typography variant="subtitle1">about us</Typography>
         </ShadowButton>
         <LowerCaseButton href="/favourites" color="inherit">
-          your favourites
+          <Typography variant="subtitle1">your favorites</Typography>
         </LowerCaseButton>
         <LowerCaseButton href="/hosting" color="inherit">
-          start hosting
+          <Typography variant="subtitle1">start hosting</Typography>
         </LowerCaseButton>
         <LowerCaseButton href="/login" color="primary">
-          login
+          <Typography variant="subtitle1">login</Typography>
         </LowerCaseButton>
       </LinksContainer>
     </StyledAppBar>

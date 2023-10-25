@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import {
   FilterContainerStyled,
   FilterElementsContainer,
@@ -8,8 +7,10 @@ import {
   Motto,
   SearchButton,
   StyledInput,
+  ToggleButton,
 } from "./FilterContainer.styled.tsx";
 import { Add, CalendarToday, Remove, Search } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 
 export const FiltersContainer = () => {
   return (
@@ -40,10 +41,14 @@ export const FiltersContainer = () => {
               <StyledInput placeholder="venue type" />
             </FilterWrapper>
           </FiltersBar>
-          <Button variant="text">I don't want to be that specific</Button>
+          <ToggleButton variant="text">
+            <Typography variant="h5">
+              I don't want to be that specific
+            </Typography>
+          </ToggleButton>
         </FiltersBarWrapper>
         <SearchButton variant="contained" href="/venues">
-          Search for venue
+          <Typography variant="h5">Search for venue</Typography>
         </SearchButton>
       </FilterElementsContainer>
     </FilterContainerStyled>

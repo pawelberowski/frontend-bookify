@@ -34,24 +34,39 @@ export const createBookifyTheme = () => {
         lineHeight: "150%",
       },
       h3: {
-        fontSize: "20px",
-        fontWeight: "400",
-        letterSpacing: "0.6px",
+        fontSize: "40px",
+        fontWeight: "600",
+        letterSpacing: "1.2px",
       },
       h4: {
+        fontSize: "25px",
+        fontWeight: "500",
+        letterSpacing: "0.75px",
+      },
+      h5: {
         fontSize: "16px",
         fontWeight: "600",
         letterSpacing: "0.48px",
       },
-      h5: {
+      h6: {
         fontSize: "14px",
         fontWeight: "400",
         letterSpacing: "0.42px",
       },
-      h6: {
+      body: {
+        fontSize: "20px",
+        fontWeight: "300",
+        letterSpacing: "0.6px",
+      },
+      caption: {
         fontSize: "12px",
         fontWeight: "400",
         letterSpacing: "0.36px",
+      },
+      subtitle1: {
+        fontSize: "16px",
+        fontWeight: "400",
+        letterSpacing: "0.48px",
       },
     },
   });

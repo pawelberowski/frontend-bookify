@@ -14,15 +14,21 @@ export const Logo = styled(Typography)`
   font-weight: 100;
 `;
 
-export const LinksContainer = styled(Box)`
+export const LinksContainer = styled(Box)(
+  ({ theme }) => `
   display: flex;
-`;
+  color: ${theme.palette.customGrey.darker};
+`,
+);
 
 export const LowerCaseButton = styled(Button)`
   text-transform: lowercase;
 `;
 
-export const ShadowButton = styled(Button)`
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+export const ShadowButton = styled(Button)(
+  ({ theme }) => `
+  color: ${theme.palette.customGrey.darker};
+  text-shadow: 0 4px 4px ${theme.palette.customGrey.lightest};
   text-transform: lowercase;
-`;
+`,
+);

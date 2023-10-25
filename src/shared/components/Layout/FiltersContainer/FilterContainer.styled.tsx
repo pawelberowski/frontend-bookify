@@ -30,7 +30,7 @@ export const Motto = styled((props: TypographyProps) => (
   <Typography {...props} variant={"h2"} />
 ))`
   align-self: end;
-  margin-right: 103px; //TODO: repair with theme/spacing
+  margin-right: ${({ theme }) => theme.spacing(25)};
 `;
 
 export const FiltersBarWrapper = styled(Box)`
@@ -60,6 +60,16 @@ export const StyledInput = styled("input")`
   width: 100px;
 `;
 
-export const SearchButton = styled(Button)`
-  border-radius: 18px;
+export const ToggleButton = styled(Button)`
+  text-transform: none;
 `;
+
+export const SearchButton = styled(Button)(
+  ({ theme }) => `
+  border-radius: 18px;
+  color: ${theme.palette.customGrey.contrastText};
+  text-transform: none;
+  width: 220px;
+  height: 40px;
+`,
+);
