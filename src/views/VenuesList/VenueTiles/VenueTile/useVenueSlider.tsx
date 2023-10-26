@@ -1,13 +1,13 @@
 import { useVenuePhotos } from "./useVenuePhotos.tsx";
-import { useState } from "react";
-import { Venue } from "../../../../shared/types/Venue.ts";
+import { useState, MouseEvent } from "react";
 
-export const useVenueTile = (venue: Venue) => {
-  const photos = useVenuePhotos(venue.albumId);
+export const useVenueSlider = (albumId: number) => {
+  const photos = useVenuePhotos(albumId);
 
   const [activeStep, setActiveStep] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     if (photos && activeStep === photos?.length - 1) {
       setActiveStep(0);
       return;
@@ -15,7 +15,8 @@ export const useVenueTile = (venue: Venue) => {
     setActiveStep(activeStep + 1);
   };
 
-  const handleBack = () => {
+  const handleBack = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     if (photos && activeStep === 0 && photos.length > 0) {
       setActiveStep(photos.length - 1);
       return;

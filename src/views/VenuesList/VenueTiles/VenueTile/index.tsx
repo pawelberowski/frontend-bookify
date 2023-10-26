@@ -1,6 +1,6 @@
 import { Venue } from "../../../../shared/types/Venue.ts";
 import { FunctionComponent } from "react";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import {
   ArrowBackIos,
   ArrowForwardIos,
@@ -9,20 +9,18 @@ import {
 } from "@mui/icons-material";
 import GradeIcon from "@mui/icons-material/Grade";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import { useVenueTile } from "./useVenueTile.tsx";
+import { useVenueSlider } from "./useVenueSlider.tsx";
 import {
-  Capacity,
+  ArrowIcon,
   FavoriteContainer,
-  LeftArrowIcon,
-  Location,
+  LocationWrapper,
   NameContainer,
-  Price,
   PriceAndLocation,
-  Rating,
-  RatingAndCapacity,
-  RightArrowIcon,
+  RatingAndCapacityContainer,
+  RatingAndCapacityWrapper,
   RowContainer,
   SlidePhotosContainer,
+  StyledLink,
   VenueTileContainer,
 } from "./VenueTile.styled.tsx";
 
@@ -31,52 +29,58 @@ interface VenueTileProps {
 }
 
 export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
-  const { name, pricePerNightInEUR, location, rating, capacity } = venue;
-  const { photos, activeStep, handleBack, handleNext } = useVenueTile(venue);
+  const { name, pricePerNightInEUR, location, rating, capacity, albumId } =
+    venue;
+  const { photos, activeStep, handleBack, handleNext } =
+    useVenueSlider(albumId);
 
   if (!photos) {
     return <CircularProgress />;
   }
 
   return (
-    <VenueTileContainer>
-      <SlidePhotosContainer imgUrl={photos[activeStep].url}>
-        <RowContainer>
-          <FavoriteContainer>
-            <FavoriteBorder />
-          </FavoriteContainer>
-          <NameContainer>{name}</NameContainer>
-        </RowContainer>
-        <RowContainer>
-          <LeftArrowIcon onClick={handleBack}>
-            <ArrowBackIos />
-          </LeftArrowIcon>
-          <RightArrowIcon onClick={handleNext}>
-            <ArrowForwardIos />
-          </RightArrowIcon>
-        </RowContainer>
-        <RowContainer>
-          <PriceAndLocation>
-            <Price>{pricePerNightInEUR}</Price>
-            <Location>
-              <Place />
-              {location.name}
-            </Location>
-          </PriceAndLocation>
-        </RowContainer>
-      </SlidePhotosContainer>
-      <RatingAndCapacity>
-        <Rating>
-          <GradeIcon />
-          <p>rating</p>
-          <p>{rating}</p>
-        </Rating>
-        <Capacity>
-          <PeopleAltIcon />
-          <p>capacity</p>
-          <p>{capacity}</p>
-        </Capacity>
-      </RatingAndCapacity>
-    </VenueTileContainer>
+    <StyledLink to={String(venue.id)}>
+      <VenueTileContainer>
+        <SlidePhotosContainer imgUrl={photos[activeStep].url}>
+          <RowContainer>
+            <FavoriteContainer>
+              <FavoriteBorder />
+            </FavoriteContainer>
+            <NameContainer>
+              <Typography variant="h5">{name}</Typography>
+            </NameContainer>
+          </RowContainer>
+          <RowContainer>
+            <ArrowIcon onClick={handleBack}>
+              <ArrowBackIos />
+            </ArrowIcon>
+            <ArrowIcon onClick={handleNext}>
+              <ArrowForwardIos />
+            </ArrowIcon>
+          </RowContainer>
+          <RowContainer>
+            <PriceAndLocation>
+              <Typography variant="h5">{pricePerNightInEUR}</Typography>
+              <LocationWrapper>
+                <Place />
+                <Typography variant="caption">{location.name}</Typography>
+              </LocationWrapper>
+            </PriceAndLocation>
+          </RowContainer>
+        </SlidePhotosContainer>
+        <RatingAndCapacityContainer>
+          <RatingAndCapacityWrapper>
+            <GradeIcon />
+            <Typography variant="h6">rating</Typography>
+            <Typography variant="h6">{rating}</Typography>
+          </RatingAndCapacityWrapper>
+          <RatingAndCapacityWrapper>
+            <PeopleAltIcon />
+            <Typography variant="h6">capacity</Typography>
+            <Typography variant="h6">{capacity}</Typography>
+          </RatingAndCapacityWrapper>
+        </RatingAndCapacityContainer>
+      </VenueTileContainer>
+    </StyledLink>
   );
 };

@@ -1,15 +1,16 @@
 import { VenueTile } from "./VenueTile";
-import { Box } from "@mui/material";
 import { Venue } from "../../../shared/types/Venue.ts";
-import { FC } from "react";
+import { FunctionComponent } from "react";
+import { VenueTilesContainer } from "./VenueTiles.styled.tsx";
 
 interface VenueTiles {
   venues: Venue[];
 }
-export const VenueTiles: FC<VenueTiles> = ({ venues }) => {
+
+export const VenueTiles: FunctionComponent<VenueTiles> = ({ venues }) => {
   return (
-    <Box>
+    <VenueTilesContainer>
       {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
-    </Box>
+    </VenueTilesContainer>
   );
 };

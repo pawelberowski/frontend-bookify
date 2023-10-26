@@ -1,12 +1,16 @@
 import { Box, IconButton, Paper, styled } from "@mui/material";
+import { Link } from "react-router-dom";
 
-export const VenueTileContainer = styled("div")`
+export const VenueTileContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 282px;
   height: 228px;
   justify-content: center;
   align-items: center;
+  color: ${(props) => {
+    return props.theme.palette.customGrey.contrastText;
+  }};
 `;
 
 interface SlidePhotosContainer {
@@ -21,86 +25,97 @@ export const SlidePhotosContainer = styled("div")<SlidePhotosContainer>`
   flex-direction: column;
 `;
 
-export const RowContainer = styled("div")`
+export const RowContainer = styled(Box)`
   display: flex;
   justify-content: space-between;
   width: 100%;
 `;
-export const FavoriteContainer = styled(Box)`
+
+export const FavoriteContainer = styled(Box)(
+  ({ theme }) => `
   display: flex;
   width: 32px;
   height: 32px;
-  padding: 8px;
+  padding: ${theme.spacing(2)};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 0 0 8px 0;
-  background: rgba(0, 0, 0, 0.6);
-`;
+  background: ${theme.palette.customGrey.main};
+`,
+);
 
-export const NameContainer = styled(Box)`
+export const NameContainer = styled(Box)(
+  ({ theme }) => `
   display: flex;
-  width: 164px;
-  height: 32px;
-  padding: 8px 0;
-  flex-direction: column;
+  min-width: 154px;
+  max-width: 200px;
+  padding: ${theme.spacing(2)};
   justify-content: center;
   align-items: center;
   border-radius: 0 0 0 18px;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${theme.palette.customGrey.lighter};
   text-align: end;
-`;
+  text-shadow: 0 2px 4px ${theme.palette.customGrey.main};
+`,
+);
 
-export const LeftArrowIcon = styled(IconButton)`
+export const ArrowIcon = styled(IconButton)`
   width: 40px;
   height: 40px;
 `;
 
-export const RightArrowIcon = styled(IconButton)`
-  width: 40px;
-  height: 40px;
-`;
-
-export const PriceAndLocation = styled("div")`
+export const PriceAndLocation = styled(Box)(
+  ({ theme }) => `
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-width: 140px;
+  padding: ${theme.spacing(2)};
   height: 70px;
   border-radius: 0 18px 0 0;
-  background: rgba(0, 0, 0, 0.6);
-  align-self: flex-end;
-`;
+  background: ${theme.palette.customGrey.main};
+`,
+);
 
-export const Price = styled("p")``;
-
-export const Location = styled("p")`
+export const LocationWrapper = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
 `;
 
-export const RatingAndCapacity = styled(Paper)`
+export const RatingAndCapacityContainer = styled(Paper)(
+  ({ theme }) => `
   display: flex;
   justify-content: space-around;
   width: 282px;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background: #fdfdfd;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
-`;
+  box-shadow: ${theme.palette.customGrey.lightest};
+  border-radius: 0;
+  color: #595959;
+`,
+);
 
-export const Rating = styled("span")`
+export const RatingAndCapacityWrapper = styled(Box)(
+  ({ theme }) => `
   display: flex;
   height: 35px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-`;
+  gap: ${theme.spacing(2)};
+`,
+);
 
-export const Capacity = styled("span")`
-  display: flex;
-  height: 35px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
 `;
