@@ -8,7 +8,8 @@ import { ToggleButtons } from "./ToggleButtons";
 import { CalendarContainer } from "./CalendarContainer";
 import {
   BookButton,
-  BookButtonContainer, BookingSystemContainer,
+  BookButtonContainer,
+  BookingSystemContainer,
   GreyDivider,
 } from "./bookingSystem.styled";
 

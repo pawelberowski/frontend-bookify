@@ -49,8 +49,6 @@ export const DisplaySwitchWrapper = styled(Button)`
   line-height: 150%;
 `;
 
-export const RightPanelContainer = styled(Box)``;
-
 export const LabelDivider = styled(Divider)(
   ({ theme }) => `
   margin-top: 16px;
@@ -59,10 +57,3 @@ export const LabelDivider = styled(Divider)(
   border-color: ${theme.palette.customGrey.darker};
 `,
 );
-export const BookingContainer = styled(Box)``;
-
-export const ContactContainer = styled(Box)``;
-
-export const SocialMediaContainer = styled(Box)``;
-
-export const LabelWrapper = styled(Typography)``;

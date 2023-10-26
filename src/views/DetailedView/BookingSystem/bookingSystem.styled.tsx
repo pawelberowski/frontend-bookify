@@ -1,10 +1,10 @@
 import { Box, Button, Divider, styled } from "@mui/material";
 
 export const BookingSystemContainer = styled(Box)(
-  ({theme}) => `
+  ({ theme }) => `
     margin-bottom: ${theme.spacing(35)};
-  `
-)
+  `,
+);
 export const GreyDivider = styled(Divider)(
   ({ theme }) => `
   color: ${theme.palette.customGrey.lightest};
