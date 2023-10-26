@@ -18,6 +18,7 @@ import { PhotoSlider } from "./PhotoSlider";
 import { Box, Rating, Typography } from "@mui/material";
 import { BookingSystem } from "./BookingSystem";
 import { ContactList } from "./ContactList";
+import { SocialMediaLinks } from "./SocialMediaLinks";
 export const DetailedView = () => {
   const params = useParams();
   const venueId = Number(params.id);
@@ -75,6 +76,7 @@ export const DetailedView = () => {
           <Box>
             <Typography variant="h4">Check out on social media</Typography>
             <LabelDivider />
+            <SocialMediaLinks />
           </Box>
         </Box>
       </DetailedViewContainer>
