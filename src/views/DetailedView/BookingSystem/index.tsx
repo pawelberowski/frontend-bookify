@@ -1,5 +1,4 @@
 import {
-  Box,
   Checkbox,
   FormControlLabel,
   FormGroup,
@@ -7,10 +6,15 @@ import {
 } from "@mui/material";
 import { ToggleButtons } from "./ToggleButtons";
 import { CalendarContainer } from "./CalendarContainer";
+import {
+  BookButton,
+  BookButtonContainer, BookingSystemContainer,
+  GreyDivider,
+} from "./bookingSystem.styled";
 
 export const BookingSystem = () => {
   return (
-    <Box>
+    <BookingSystemContainer>
       <ToggleButtons />
       <FormGroup>
         <FormControlLabel
@@ -19,6 +23,14 @@ export const BookingSystem = () => {
         />
       </FormGroup>
       <CalendarContainer />
-    </Box>
+      <Typography variant="body1">per day</Typography>
+      <GreyDivider />
+      <Typography variant="h4">total</Typography>
+      <BookButtonContainer>
+        <BookButton variant="contained">
+          <Typography variant="h5">Book</Typography>
+        </BookButton>
+      </BookButtonContainer>
+    </BookingSystemContainer>
   );
 };
