@@ -10,6 +10,7 @@ import {
   NameAndAddressContainer,
   NameAndScoreContainer,
   ReviewsNumberWrapper,
+  RightPanelContainer,
   ScoreContainer,
 } from "./DetailedView.styled.tsx";
 import { useCurrentDisplay } from "./useCurrentDisplay.tsx";
@@ -59,7 +60,7 @@ export const DetailedView = () => {
             venueDetails={venueDetails}
           />
         </LeftPanelContainer>
-        <Box>
+        <RightPanelContainer>
           <Box>
             <Typography variant="h4">Book this venue</Typography>
             <LabelDivider />
@@ -78,7 +79,7 @@ export const DetailedView = () => {
             <LabelDivider />
             <SocialMediaLinks />
           </Box>
-        </Box>
+        </RightPanelContainer>
       </DetailedViewContainer>
     )
   );

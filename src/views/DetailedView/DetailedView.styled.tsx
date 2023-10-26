@@ -57,3 +57,7 @@ export const LabelDivider = styled(Divider)(
   border-color: ${theme.palette.customGrey.darker};
 `,
 );
+
+export const RightPanelContainer = styled(Box)`
+  max-width: 382px;
+`;
