@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { ToggleButtons } from "./ToggleButtons";
+import { CalendarContainer } from "./CalendarContainer";
 
 export const BookingSystem = () => {
   return (
@@ -17,6 +18,7 @@ export const BookingSystem = () => {
           label={<Typography variant="body2">just one day</Typography>}
         />
       </FormGroup>
+      <CalendarContainer />
     </Box>
   );
 };
