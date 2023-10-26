@@ -7,6 +7,7 @@ import {
   DetailedViewContainer,
   DisplaySwitchesContainer,
   DisplaySwitchWrapper,
+  LabelDivider,
   LabelWrapper,
   LeftPanelContainer,
   NameAndAddressContainer,
@@ -20,6 +21,7 @@ import { useCurrentDisplay } from "./useCurrentDisplay.tsx";
 import { DisplayContainer } from "./DisplayContainer";
 import { PhotoSlider } from "./PhotoSlider";
 import { Rating, Typography } from "@mui/material";
+import { BookingSystem } from "./BookingSystem";
 
 export const DetailedView = () => {
   const params = useParams();
@@ -64,12 +66,16 @@ export const DetailedView = () => {
         <RightPanelContainer>
           <BookingContainer>
             <LabelWrapper variant="h4">Book this venue</LabelWrapper>
+            <LabelDivider />
+            <BookingSystem />
           </BookingContainer>
           <ContactContainer>
             <LabelWrapper variant="h4">Contact this venue</LabelWrapper>
+            <LabelDivider />
           </ContactContainer>
           <SocialMediaContainer>
             <LabelWrapper variant="h4">Check out on social media</LabelWrapper>
+            <LabelDivider />
           </SocialMediaContainer>
         </RightPanelContainer>
       </DetailedViewContainer>
