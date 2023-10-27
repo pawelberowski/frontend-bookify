@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import {StyledCalendar} from "./CalendarContainer.styled.tsx";
 
 type ValuePiece = Date | null;
 
@@ -11,7 +11,7 @@ export const CalendarContainer = () => {
 
   return (
     <div>
-      <Calendar onChange={onChange} value={value} />
+      <StyledCalendar onChange={onChange} value={value} />
     </div>
   );
 };

@@ -10,7 +10,7 @@ export const AmenitiesList: FunctionComponent<Props> = ({ amenities }) => {
   return (
     <List>
       {amenities?.map((amenity) => (
-        <ListItem key={amenity}>
+        <ListItem key={`one${amenity}`}>
           <ListItemIcon>
             <Done />
           </ListItemIcon>
