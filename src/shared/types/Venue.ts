@@ -1,6 +1,11 @@
+interface Coordinates {
+  latitude: number;
+  longitude: number;
+}
 export interface LocationDetails {
   postalCode: string;
   name: string;
+  coordinates: Coordinates;
 }
 export interface Venue {
   id: number;

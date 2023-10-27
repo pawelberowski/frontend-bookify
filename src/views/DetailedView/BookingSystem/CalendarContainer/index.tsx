@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "react-calendar/dist/Calendar.css";
-import {StyledCalendar} from "./CalendarContainer.styled.tsx";
+import { StyledCalendar } from "./CalendarContainer.styled.tsx";
 
 type ValuePiece = Date | null;
 
