@@ -19,5 +19,5 @@ export const DisplayContainer: FunctionComponent<DisplayContainer> = ({
   if (currentDisplay === displayGallery) {
     return <GalleryContainer albumId={venueDetails.albumId} />;
   }
-  return <MyMapContainer />;
+  return <MyMapContainer coordinates={venueDetails.location.coordinates} />;
 };

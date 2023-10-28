@@ -5,7 +5,7 @@
       "location": {
         "postalCode": "48-865",
         "name": "Meridian",
-        "coordinates": { "latitude": -17.3305, "longitude": -122.2485 }
+        "coordinates": { "latitude": 54.7605, "longitude": 18.504 }
       },
       "pricePerNightInEUR": "993.00",
       "rating": 4.5,
@@ -161,7 +161,7 @@
       "location": {
         "postalCode": "31-667",
         "name": "Germanstad",
-        "coordinates": { "latitude": -10.783, "longitude": 91.5424 }
+        "coordinates": { "latitude": 54.6032, "longitude": 18.8065 }
       },
       "pricePerNightInEUR": "391.00",
       "rating": 2.3,
@@ -1308,7 +1308,7 @@
       "location": {
         "postalCode": "48-865",
         "name": "Meridian",
-        "coordinates": { "latitude": -17.3305, "longitude": -122.2485 }
+        "coordinates": { "latitude": 54.7605, "longitude": 18.504 }
       },
       "pricePerNightInEUR": "993.00",
       "rating": 4.5,
@@ -1949,7 +1949,7 @@
       "location": {
         "postalCode": "31-667",
         "name": "Germanstad",
-        "coordinates": { "latitude": -10.783, "longitude": 91.5424 }
+        "coordinates": { "latitude": 54.6032, "longitude": 18.8065 }
       },
       "pricePerNightInEUR": "391.00",
       "rating": 2.3,
