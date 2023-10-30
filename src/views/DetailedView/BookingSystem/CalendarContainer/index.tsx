@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "react-calendar/dist/Calendar.css";
-import { StyledCalendar } from "./CalendarContainer.styled.tsx";
+import {
+  CalendarWrapper,
+  StyledCalendar,
+} from "./CalendarContainer.styled.tsx";
 
 type ValuePiece = Date | null;
 
@@ -10,8 +13,19 @@ export const CalendarContainer = () => {
   const [value, onChange] = useState<Value>(new Date());
 
   return (
-    <div>
-      <StyledCalendar onChange={onChange} value={value} />
-    </div>
+    <CalendarWrapper>
+      <StyledCalendar
+        onChange={onChange}
+        value={value}
+        calendarType="gregory"
+        prevLabel=""
+        prev2Label=""
+        nextLabel=""
+        next2Label=""
+        formatShortWeekday={(_locale, date) =>
+          [`S`, `M`, `T`, `W`, `T`, `F`, `S`][date.getDay()]
+        }
+      />
+    </CalendarWrapper>
   );
 };
