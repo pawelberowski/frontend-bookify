@@ -22,7 +22,7 @@ export const SocialMediaLinks = () => {
         <img src={InstagramIcon} alt="instagram logo" />
       </IconButton>
       <IconButton
-        href="https://tweeter.com"
+        href="https://twitter.com"
         target="_blank"
         rel="noopener noreferrer"
       >
