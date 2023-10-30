@@ -1,25 +1,30 @@
 import { VenueTile } from "./VenueTile";
 import { Venue } from "../../../shared/types/Venue.ts";
-import { FunctionComponent } from "react";
+import { ChangeEvent, FunctionComponent } from "react";
 import { VenueTilesContainer } from "./VenueTiles.styled.tsx";
-import { Button } from "@mui/material";
+import { Pagination } from "@mui/material";
+import { SetURLSearchParams } from "react-router-dom";
 
 interface VenueTiles {
   venues: Venue[];
-  onNextPage: () => void;
-  onPrevPage: () => void;
+  numberOfVenues: number | null;
+  setSearchParams: SetURLSearchParams;
 }
 
 export const VenueTiles: FunctionComponent<VenueTiles> = ({
   venues,
-  onNextPage,
-  onPrevPage,
+  numberOfVenues,
+  setSearchParams,
 }) => {
+  const pagesNumber = Math.ceil((numberOfVenues ?? 1) / 18);
+
+  const changePage = (_event: ChangeEvent<unknown>, value: number) =>
+    setSearchParams({ page: String(value) });
+
   return (
     <VenueTilesContainer>
       {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
-      <Button onClick={onPrevPage}>previous </Button>
-      <Button onClick={onNextPage}>next</Button>
+      <Pagination count={pagesNumber} onChange={changePage} />
     </VenueTilesContainer>
   );
 };

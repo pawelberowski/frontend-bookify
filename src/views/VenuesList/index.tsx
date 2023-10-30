@@ -5,7 +5,7 @@ import { VenueTiles } from "./VenueTiles";
 import { VenuesListContainerStyled } from "./VenuesList.styled.tsx";
 
 export const VenuesList = () => {
-  const { venues, onNextPage, onPrevPage } = useVenuesList();
+  const { venues, numberOfVenues, setSearchParams } = useVenuesList();
 
   return (
     <VenuesListContainerStyled>
@@ -13,8 +13,8 @@ export const VenuesList = () => {
       {venues ? (
         <VenueTiles
           venues={venues}
-          onNextPage={onNextPage}
-          onPrevPage={onPrevPage}
+          numberOfVenues={numberOfVenues}
+          setSearchParams={setSearchParams}
         />
       ) : (
         <CircularProgress />
