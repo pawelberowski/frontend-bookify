@@ -1,8 +1,14 @@
 import { VenueTile } from "./VenueTile";
 import { Venue } from "../../../shared/types/Venue.ts";
 import { ChangeEvent, FunctionComponent } from "react";
-import { VenueTilesContainer } from "./VenueTiles.styled.tsx";
-import { Pagination } from "@mui/material";
+import {
+  PaginationWrapper,
+  ShowAndSortContainer,
+  SortButton,
+  VenueTilesContainer,
+  VenueTilesWrapper,
+} from "./VenueTiles.styled.tsx";
+import { Pagination, Typography } from "@mui/material";
 import { SetURLSearchParams } from "react-router-dom";
 
 interface VenueTiles {
@@ -23,8 +29,18 @@ export const VenueTiles: FunctionComponent<VenueTiles> = ({
 
   return (
     <VenueTilesContainer>
-      {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
-      <Pagination count={pagesNumber} onChange={changePage} />
+      <ShowAndSortContainer>
+        <Typography variant="body2">show 18 on the page</Typography>
+        <SortButton variant="text">
+          <Typography variant="h5">sort</Typography>
+        </SortButton>
+      </ShowAndSortContainer>
+      <VenueTilesWrapper>
+        {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
+      </VenueTilesWrapper>
+      <PaginationWrapper>
+        <Pagination count={pagesNumber} onChange={changePage} />
+      </PaginationWrapper>
     </VenueTilesContainer>
   );
 };
