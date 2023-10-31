@@ -39,7 +39,7 @@ export const VenueTiles: FunctionComponent<VenueTiles> = ({
         {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
       </VenueTilesWrapper>
       <PaginationWrapper>
-        <Pagination count={pagesNumber} onChange={changePage} />
+        <Pagination color="primary" count={pagesNumber} onChange={changePage} />
       </PaginationWrapper>
     </VenueTilesContainer>
   );
