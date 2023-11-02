@@ -64,7 +64,7 @@ export const DetailedView = () => {
           <Box>
             <Typography variant="h4">Book this venue</Typography>
             <LabelDivider />
-            <BookingSystem />
+            <BookingSystem priceInEur={venueDetails.pricePerNightInEUR} />
           </Box>
           <Box>
             <Typography variant="h4">Contact this venue</Typography>

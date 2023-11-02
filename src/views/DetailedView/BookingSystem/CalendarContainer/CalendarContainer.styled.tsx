@@ -18,7 +18,6 @@ export const StyledCalendar = styled(Calendar)(
   padding: ${theme.spacing(6)} ${theme.spacing(3)} ${theme.spacing(
     11,
   )} ${theme.spacing(3)};
-  margin-bottom: ${theme.spacing(11)};
   
   abbr {
     text-decoration: none;

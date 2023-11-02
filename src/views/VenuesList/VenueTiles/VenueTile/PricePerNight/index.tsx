@@ -10,6 +10,6 @@ export const PricePerNight: FunctionComponent<Props> = ({ priceInEur }) => {
   if (!exchangeRate) {
     return null;
   }
-  const price = Number(priceInEur) * exchangeRate.plnPerEur;
-  return <Typography variant="h5">{price.toFixed(2)}</Typography>;
+  const priceInPln = (Number(priceInEur) * exchangeRate.plnPerEur).toFixed(0);
+  return <Typography variant="h5">{`${priceInPln}zł / doba`}</Typography>;
 };

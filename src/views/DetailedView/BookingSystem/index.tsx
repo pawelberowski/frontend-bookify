@@ -11,9 +11,22 @@ import {
   BookButtonContainer,
   BookingSystemContainer,
   GreyDivider,
+  PriceWrapper,
 } from "./bookingSystem.styled";
+import { FunctionComponent, useContext } from "react";
+import { ExchangeRateContext } from "../../../shared/ExchangeRateContext/ExchangeRate.ts";
 
-export const BookingSystem = () => {
+interface Props {
+  priceInEur: string | number;
+}
+export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
+  const { exchangeRate } = useContext(ExchangeRateContext);
+
+  if (!exchangeRate) {
+    return null;
+  }
+  const priceInPLN = (Number(priceInEur) * exchangeRate.plnPerEur).toFixed(0);
+
   return (
     <BookingSystemContainer>
       <ToggleButtons />
@@ -24,9 +37,15 @@ export const BookingSystem = () => {
         />
       </FormGroup>
       <CalendarContainer />
-      <Typography variant="body1">per day</Typography>
+      <PriceWrapper>
+        <Typography variant="body1">per day</Typography>
+        <Typography variant="body1">{`${priceInPLN} zł`}</Typography>
+      </PriceWrapper>
       <GreyDivider />
-      <Typography variant="h4">total</Typography>
+      <PriceWrapper>
+        <Typography variant="h4">total</Typography>
+        <Typography variant="h4">{`${priceInPLN} zł`}</Typography>
+      </PriceWrapper>
       <BookButtonContainer>
         <BookButton variant="contained">
           <Typography variant="h5">Book</Typography>
