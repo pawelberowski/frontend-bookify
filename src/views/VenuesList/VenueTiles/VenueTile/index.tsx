@@ -23,6 +23,7 @@ import {
   StyledLink,
   VenueTileContainer,
 } from "./VenueTile.styled.tsx";
+import { PricePerNight } from "./PricePerNight";
 
 interface VenueTileProps {
   venue: Venue;
@@ -60,7 +61,7 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
           </RowContainer>
           <RowContainer>
             <PriceAndLocation>
-              <Typography variant="h5">{pricePerNightInEUR}</Typography>
+              <PricePerNight priceInEur={pricePerNightInEUR} />
               <LocationWrapper>
                 <Place />
                 <Typography variant="caption">{location.name}</Typography>
