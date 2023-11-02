@@ -1,4 +1,4 @@
-import { Box, Button, Paper, styled, Typography } from "@mui/material";
+import { Box, Button, Divider, Paper, styled, Typography } from "@mui/material";
 
 export const DetailedViewContainer = styled(Box)(
   ({ theme }) => `
@@ -49,12 +49,15 @@ export const DisplaySwitchWrapper = styled(Button)`
   line-height: 150%;
 `;
 
-export const RightPanelContainer = styled(Box)``;
+export const LabelDivider = styled(Divider)(
+  ({ theme }) => `
+  margin-top: 16px;
+  margin-bottom: 40px;
+  border-bottom-width: 2px;
+  border-color: ${theme.palette.customGrey.darker};
+`,
+);
 
-export const BookingContainer = styled(Box)``;
-
-export const ContactContainer = styled(Box)``;
-
-export const SocialMediaContainer = styled(Box)``;
-
-export const LabelWrapper = styled(Typography)``;
+export const RightPanelContainer = styled(Box)`
+  max-width: 382px;
+`;

@@ -2,25 +2,24 @@ import { useVenueDetails } from "./useVenueDetails.tsx";
 import { useParams } from "react-router-dom";
 import {
   AddressWrapper,
-  BookingContainer,
-  ContactContainer,
   DetailedViewContainer,
   DisplaySwitchesContainer,
   DisplaySwitchWrapper,
-  LabelWrapper,
+  LabelDivider,
   LeftPanelContainer,
   NameAndAddressContainer,
   NameAndScoreContainer,
   ReviewsNumberWrapper,
   RightPanelContainer,
   ScoreContainer,
-  SocialMediaContainer,
 } from "./DetailedView.styled.tsx";
 import { useCurrentDisplay } from "./useCurrentDisplay.tsx";
 import { DisplayContainer } from "./DisplayContainer";
 import { PhotoSlider } from "./PhotoSlider";
-import { Rating, Typography } from "@mui/material";
-
+import { Box, Rating, Typography } from "@mui/material";
+import { BookingSystem } from "./BookingSystem";
+import { ContactList } from "./ContactList";
+import { SocialMediaLinks } from "./SocialMediaLinks";
 export const DetailedView = () => {
   const params = useParams();
   const venueId = Number(params.id);
@@ -62,15 +61,24 @@ export const DetailedView = () => {
           />
         </LeftPanelContainer>
         <RightPanelContainer>
-          <BookingContainer>
-            <LabelWrapper variant="h4">Book this venue</LabelWrapper>
-          </BookingContainer>
-          <ContactContainer>
-            <LabelWrapper variant="h4">Contact this venue</LabelWrapper>
-          </ContactContainer>
-          <SocialMediaContainer>
-            <LabelWrapper variant="h4">Check out on social media</LabelWrapper>
-          </SocialMediaContainer>
+          <Box>
+            <Typography variant="h4">Book this venue</Typography>
+            <LabelDivider />
+            <BookingSystem />
+          </Box>
+          <Box>
+            <Typography variant="h4">Contact this venue</Typography>
+            <LabelDivider />
+            <ContactList
+              phoneNumber={venueDetails.contactDetails.phone}
+              email={venueDetails.contactDetails.email}
+            />
+          </Box>
+          <Box>
+            <Typography variant="h4">Check out on social media</Typography>
+            <LabelDivider />
+            <SocialMediaLinks />
+          </Box>
         </RightPanelContainer>
       </DetailedViewContainer>
     )
