@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import {
   CalendarWrapper,
@@ -10,12 +10,26 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export const CalendarContainer = () => {
-  const [value, onChange] = useState<Value>(new Date());
+  const [startDate, setStartDate] = useState<ValuePiece>(new Date());
+  const [endDate, setEndDate] = useState<ValuePiece>(new Date());
 
+  const value: Value = useMemo(() => {
+    return [startDate, endDate];
+  }, [startDate, endDate]);
+
+  function handleChange(newValue: Value) {
+    if (Array.isArray(newValue)) {
+      setStartDate(newValue[0]);
+      setEndDate(newValue[1]);
+    } else {
+      setStartDate(newValue);
+      setEndDate(newValue);
+    }
+  }
   return (
     <CalendarWrapper>
       <StyledCalendar
-        onChange={onChange}
+        onChange={handleChange}
         value={value}
         calendarType="gregory"
         prevLabel=""
@@ -25,6 +39,8 @@ export const CalendarContainer = () => {
         formatShortWeekday={(_locale, date) =>
           [`S`, `M`, `T`, `W`, `T`, `F`, `S`][date.getDay()]
         }
+        selectRange={true}
+        goToRangeStartOnSelect={true}
       />
     </CalendarWrapper>
   );
