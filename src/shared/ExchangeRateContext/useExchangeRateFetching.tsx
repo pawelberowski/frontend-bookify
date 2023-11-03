@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react";
-import { ExchangeRateContext } from "./ExchangeRate.ts";
+import { useEffect } from "react";
+import { useExchangeRateContext } from "./useExchangeRateContext.tsx";
 
 export function useExchangeRateFetching() {
-  const { fetchExchangeRate } = useContext(ExchangeRateContext);
+  const { fetchExchangeRate } = useExchangeRateContext();
 
   useEffect(() => {
     fetchExchangeRate();

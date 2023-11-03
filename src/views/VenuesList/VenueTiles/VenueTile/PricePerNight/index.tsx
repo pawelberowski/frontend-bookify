@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material";
-import { FunctionComponent, useContext } from "react";
-import { ExchangeRateContext } from "../../../../../shared/ExchangeRateContext/ExchangeRate.ts";
+import { FunctionComponent } from "react";
+import { useExchangeRateContext } from "../../../../../shared/ExchangeRateContext/useExchangeRateContext.tsx";
 
 interface Props {
   priceInEur: string;
 }
 export const PricePerNight: FunctionComponent<Props> = ({ priceInEur }) => {
-  const { exchangeRate } = useContext(ExchangeRateContext);
+  const { exchangeRate } = useExchangeRateContext();
   if (!exchangeRate) {
     return null;
   }
