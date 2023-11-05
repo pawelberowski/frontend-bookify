@@ -23,16 +23,15 @@ export const ToggleButtons: FunctionComponent<Props> = ({ value }) => {
   };
 
   if (Array.isArray(value)) {
-    const [startDate, endDate] = [value[0], value[1]];
-    const startsAt = getDateString(startDate);
-    const endsAt = getDateString(endDate);
+    const startsAt = getDateString(value[0]);
+    const endsAt = getDateString(value[1]);
     return (
       <StyledButtonGroup>
         <LeftToggleButton value="starts">
-          <Typography variant="h5">{`starts at: ${startsAt}`}</Typography>
+          <Typography variant="h5">{`starts at ${startsAt}`}</Typography>
         </LeftToggleButton>
         <RightToggleButton value="ends">
-          <Typography variant="h5">{`ends at: ${endsAt}`} </Typography>
+          <Typography variant="h5">{`ends at ${endsAt}`} </Typography>
         </RightToggleButton>
       </StyledButtonGroup>
     );

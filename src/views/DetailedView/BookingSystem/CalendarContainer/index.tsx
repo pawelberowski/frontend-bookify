@@ -9,10 +9,12 @@ import { FunctionComponent } from "react";
 interface Props {
   value: DatesValues;
   handleChange: (newValue: DatesValues) => void;
+  isRange: boolean;
 }
 export const CalendarContainer: FunctionComponent<Props> = ({
   value,
   handleChange,
+  isRange,
 }) => {
   return (
     <CalendarWrapper>
@@ -27,8 +29,7 @@ export const CalendarContainer: FunctionComponent<Props> = ({
         formatShortWeekday={(_locale, date) =>
           [`S`, `M`, `T`, `W`, `T`, `F`, `S`][date.getDay()]
         }
-        selectRange={true}
-        goToRangeStartOnSelect={true}
+        selectRange={isRange}
       />
     </CalendarWrapper>
   );

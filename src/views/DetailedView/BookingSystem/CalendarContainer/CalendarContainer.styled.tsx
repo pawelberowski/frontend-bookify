@@ -86,6 +86,12 @@ export const StyledCalendar = styled(Calendar)(
       border-radius: 50%;
     }
 
+    .react-calendar__tile--hasActive {
+      &:enabled {
+        background: ${theme.palette.primary.main};
+      }
+    }
+
     .react-calendar__tile--active {
       background: ${theme.palette.primary.main};
       &:hover {
