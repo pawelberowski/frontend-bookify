@@ -1,31 +1,19 @@
-import { useMemo, useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import {
   CalendarWrapper,
   StyledCalendar,
 } from "./CalendarContainer.styled.tsx";
+import { Value } from "../useCalendarDates.tsx";
+import { FunctionComponent } from "react";
 
-type ValuePiece = Date | null;
-
-type Value = ValuePiece | [ValuePiece, ValuePiece];
-
-export const CalendarContainer = () => {
-  const [startDate, setStartDate] = useState<ValuePiece>(new Date());
-  const [endDate, setEndDate] = useState<ValuePiece>(new Date());
-
-  const value: Value = useMemo(() => {
-    return [startDate, endDate];
-  }, [startDate, endDate]);
-
-  function handleChange(newValue: Value) {
-    if (Array.isArray(newValue)) {
-      setStartDate(newValue[0]);
-      setEndDate(newValue[1]);
-    } else {
-      setStartDate(newValue);
-      setEndDate(newValue);
-    }
-  }
+interface Props {
+  value: Value;
+  handleChange: (newValue: Value) => void;
+}
+export const CalendarContainer: FunctionComponent<Props> = ({
+  value,
+  handleChange,
+}) => {
   return (
     <CalendarWrapper>
       <StyledCalendar

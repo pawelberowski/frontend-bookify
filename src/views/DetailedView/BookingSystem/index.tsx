@@ -15,12 +15,14 @@ import {
 } from "./bookingSystem.styled";
 import { FunctionComponent } from "react";
 import { useExchangeRateContext } from "../../../shared/ExchangeRateContext/useExchangeRateContext.tsx";
+import { useCalendarDates } from "./useCalendarDates.tsx";
 
 interface Props {
   priceInEur: string | number;
 }
 export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
   const { exchangeRate } = useExchangeRateContext();
+  const { value, handleChange } = useCalendarDates();
 
   if (!exchangeRate) {
     return null;
@@ -36,7 +38,7 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
           label={<Typography variant="body2">just one day</Typography>}
         />
       </FormGroup>
-      <CalendarContainer />
+      <CalendarContainer value={value} handleChange={handleChange} />
       <PriceWrapper>
         <Typography variant="body1">per day</Typography>
         <Typography variant="body1">{`${priceInPLN} zł`}</Typography>
