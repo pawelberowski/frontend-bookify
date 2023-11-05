@@ -82,17 +82,24 @@ export const StyledCalendar = styled(Calendar)(
       background-position: center;
     }
 
+    .react-calendar__tile {
+      border-radius: 50%;
+    }
+
     .react-calendar__tile--active {
-      background: green;
+      background: ${theme.palette.primary.main};
       &:hover {
-        background: red;
+        background: #818181;
       }
       &:focus {
-        background: orange;
+        background: ${theme.palette.primary.main};
       }
     }
     .react-calendar__tile--now {
       background: #888888;
+      &:hover {
+        background: #818181;
+      }
     }
   `,
 );
