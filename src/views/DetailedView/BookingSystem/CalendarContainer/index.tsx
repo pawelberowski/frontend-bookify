@@ -3,12 +3,12 @@ import {
   CalendarWrapper,
   StyledCalendar,
 } from "./CalendarContainer.styled.tsx";
-import { Value } from "../useCalendarDates.tsx";
+import { DatesValues } from "../useCalendarDates.tsx";
 import { FunctionComponent } from "react";
 
 interface Props {
-  value: Value;
-  handleChange: (newValue: Value) => void;
+  value: DatesValues;
+  handleChange: (newValue: DatesValues) => void;
 }
 export const CalendarContainer: FunctionComponent<Props> = ({
   value,

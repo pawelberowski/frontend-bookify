@@ -1,17 +1,17 @@
 import { useMemo, useState } from "react";
 
-type ValuePiece = Date | null;
+export type DateValue = Date | null;
 
-export type Value = ValuePiece | [ValuePiece, ValuePiece];
+export type DatesValues = DateValue | [DateValue, DateValue];
 export const useCalendarDates = () => {
-  const [startDate, setStartDate] = useState<ValuePiece>(new Date());
-  const [endDate, setEndDate] = useState<ValuePiece>(new Date());
+  const [startDate, setStartDate] = useState<DateValue>(new Date());
+  const [endDate, setEndDate] = useState<DateValue>(new Date());
 
-  const value: Value = useMemo(() => {
+  const value: DatesValues = useMemo(() => {
     return [startDate, endDate];
   }, [startDate, endDate]);
 
-  function handleChange(newValue: Value) {
+  function handleChange(newValue: DatesValues) {
     if (Array.isArray(newValue)) {
       setStartDate(newValue[0]);
       setEndDate(newValue[1]);

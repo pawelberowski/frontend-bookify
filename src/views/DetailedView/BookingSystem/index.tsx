@@ -31,7 +31,7 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
 
   return (
     <BookingSystemContainer>
-      <ToggleButtons />
+      <ToggleButtons value={value} />
       <FormGroup>
         <FormControlLabel
           control={<Checkbox />}
