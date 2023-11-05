@@ -27,7 +27,14 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
   if (!exchangeRate) {
     return null;
   }
+
   const priceInPLN = (Number(priceInEur) * exchangeRate.plnPerEur).toFixed(0);
+  const startDate = value[0]?.getTime();
+  const endDate = value[1]?.getTime();
+  const oneDay = 24 * 60 * 60 * 1000;
+  const numberOfDays = Math.round(
+    Math.abs(((endDate ?? 2 * oneDay) - (startDate ?? oneDay)) / oneDay),
+  );
 
   return (
     <BookingSystemContainer>
@@ -46,7 +53,9 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
       <GreyDivider />
       <PriceWrapper>
         <Typography variant="h4">total</Typography>
-        <Typography variant="h4">{`${priceInPLN} zł`}</Typography>
+        <Typography variant="h4">{`${
+          +priceInPLN * numberOfDays
+        } zł`}</Typography>
       </PriceWrapper>
       <BookButtonContainer>
         <BookButton variant="contained">
