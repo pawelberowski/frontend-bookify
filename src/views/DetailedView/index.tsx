@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import {
   AddressWrapper,
   DetailedViewContainer,
-  DisplaySwitchesContainer,
-  DisplaySwitchWrapper,
   LabelDivider,
   LeftPanelContainer,
   NameAndAddressContainer,
@@ -20,6 +18,7 @@ import { Box, Rating, Typography } from "@mui/material";
 import { BookingSystem } from "./BookingSystem";
 import { ContactList } from "./ContactList";
 import { SocialMediaLinks } from "./SocialMediaLinks";
+import { DisplaySwitches } from "./DisplaySwitches";
 export const DetailedView = () => {
   const params = useParams();
   const venueId = Number(params.id);
@@ -44,17 +43,11 @@ export const DetailedView = () => {
             </ScoreContainer>
           </NameAndScoreContainer>
           <PhotoSlider albumId={venueDetails.albumId} />
-          <DisplaySwitchesContainer square elevation={2}>
-            <DisplaySwitchWrapper variant="text" onClick={switchToDescription}>
-              <Typography variant="h5">description</Typography>
-            </DisplaySwitchWrapper>
-            <DisplaySwitchWrapper variant="text" onClick={switchToGallery}>
-              <Typography variant="h5">gallery</Typography>
-            </DisplaySwitchWrapper>
-            <DisplaySwitchWrapper variant="text" onClick={switchToMap}>
-              <Typography variant="h5">map</Typography>
-            </DisplaySwitchWrapper>
-          </DisplaySwitchesContainer>
+          <DisplaySwitches
+            switchToDescription={switchToDescription}
+            switchToGallery={switchToGallery}
+            switchToMap={switchToMap}
+          />
           <DisplayContainer
             currentDisplay={currentDisplay}
             venueDetails={venueDetails}
