@@ -83,7 +83,7 @@ export const StyledCalendar = styled(Calendar)(
     }
 
     .react-calendar__tile {
-      border-radius: 50%;
+      border-radius: 16px;
     }
 
     .react-calendar__tile--hasActive {
