@@ -8,6 +8,11 @@ export const FiltersBarContainer = styled(Box)`
 `;
 
 export const StyledFiltersBar = styled(Box)`
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
   display: flex;
   justify-content: space-around;
   width: 100%;
