@@ -11,10 +11,10 @@ export const CalendarWrapper = styled(Box)`
 export const StyledCalendar = styled(Calendar)(
   ({ theme }) => css`
     width: auto;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid ${theme.palette.customGrey.lightest};
     border-radius: 18px;
     font-family: ${theme.typography.fontFamily};
-    background: #fdfdfd;
+    background: ${theme.palette.customGrey.contrastText};
     padding: ${theme.spacing(6)} ${theme.spacing(3)} ${theme.spacing(11)}
       ${theme.spacing(3)};
 
