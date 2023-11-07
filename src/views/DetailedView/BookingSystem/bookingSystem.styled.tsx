@@ -7,7 +7,7 @@ export const BookingSystemContainer = styled(Box)(
 );
 export const GreyDivider = styled(Divider)(
   ({ theme }) => `
-  color: ${theme.palette.customGrey.lightest};
+  color: ${theme.palette.customGrey.lighter};
   `,
 );
 
