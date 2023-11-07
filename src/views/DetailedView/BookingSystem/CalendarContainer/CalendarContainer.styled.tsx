@@ -95,16 +95,16 @@ export const StyledCalendar = styled(Calendar)(
     .react-calendar__tile--active {
       background: ${theme.palette.primary.main};
       &:hover {
-        background: #818181;
+        background: ${theme.palette.grey["500"]};
       }
       &:focus {
         background: ${theme.palette.primary.main};
       }
     }
     .react-calendar__tile--now {
-      background: #888888;
+      background: ${theme.palette.grey.A400};
       &:hover {
-        background: #818181;
+        background: ${theme.palette.grey["500"]};
       }
     }
   `,
