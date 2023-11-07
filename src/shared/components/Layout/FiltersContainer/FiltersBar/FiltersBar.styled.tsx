@@ -17,18 +17,23 @@ export const StyledFiltersBar = styled(Box)`
   justify-content: space-around;
   width: 100%;
 `;
-export const FilterWrapper = styled(Box)`
+export const FilterWrapper = styled(Box)(
+  ({ theme }) => `
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: ${theme.palette.customGrey.contrastText};
   border-radius: 18px;
-  width: 160px;
+  box-shadow: 0 2px 4px 0 ${theme.palette.customGrey.lightest};
+  border: 1px solid ${theme.palette.customGrey.lighter};
+  width: 180px;
   height: 40px;
-`;
+`,
+);
 
 export const StyledInput = styled("input")`
   border: none;
+  margin-left: ${({ theme }) => theme.spacing(2)};
   width: 100px;
 `;
 
