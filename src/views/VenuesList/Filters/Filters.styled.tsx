@@ -1,4 +1,11 @@
-import {Accordion, AccordionSummary, Button, Paper, styled} from "@mui/material";
+import {
+  Accordion,
+  AccordionSummary,
+  Backdrop,
+  Button,
+  Paper,
+  styled,
+} from "@mui/material";
 import headerImageUrl from "/src/shared/assets/gradient.svg";
 
 export const FiltersContainer = styled(Paper)`
@@ -6,7 +13,9 @@ export const FiltersContainer = styled(Paper)`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(8)};
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export const StyledAccordion = styled(Accordion)`
@@ -22,7 +31,7 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
   &:focus {
     background-image: url(${headerImageUrl});
   }
-`
+`;
 
 export const FiltersButton = styled(Button)(
   ({ theme }) => `
@@ -34,3 +43,18 @@ export const FiltersButton = styled(Button)(
   text-transform: none;
 `,
 );
+
+export const FiltersButtonBackIn = styled(Button)(
+  ({ theme }) => `
+  position: absolute;
+  left: 0;
+  top: ${theme.spacing(18)};
+  border-radius: 0 18px 18px 0;
+  color: ${theme.palette.customGrey.contrastText};
+  text-transform: none;
+`,
+);
+
+export const StyledBackdrop = styled(Backdrop)`
+  z-index: 1101;
+`;

@@ -1,10 +1,6 @@
-import {
-  AccordionDetails,
-  Slider,
-  Typography,
-} from "@mui/material";
+import { AccordionDetails, Slider, Typography } from "@mui/material";
 import { useState } from "react";
-import {StyledAccordion, StyledAccordionSummary} from "../Filters.styled.tsx";
+import { StyledAccordion, StyledAccordionSummary } from "../Filters.styled.tsx";
 import { ExpandIcon } from "../ExpandIcon";
 
 export const PriceRange = () => {

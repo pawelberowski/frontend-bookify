@@ -4,7 +4,7 @@ import {
   FormControlLabel,
   Typography,
 } from "@mui/material";
-import {StyledAccordion, StyledAccordionSummary} from "../Filters.styled.tsx";
+import { StyledAccordion, StyledAccordionSummary } from "../Filters.styled.tsx";
 import { ExpandIcon } from "../ExpandIcon";
 
 export const HandicapAccessibility = () => {

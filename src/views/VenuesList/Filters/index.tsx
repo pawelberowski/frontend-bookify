@@ -3,7 +3,12 @@ import { Amenities } from "./Amenities/Amenities.tsx";
 import { RoomAmenities } from "./RoomAmenities/RoomAmenities.tsx";
 import { Neighbourhoods } from "./Neighbourhoods/Neighbourhoods.tsx";
 import { HandicapAccessibility } from "./HandicapAccessibility/HandicapAccessibility.tsx";
-import { FiltersButton, FiltersContainer } from "./Filters.styled.tsx";
+import {
+  FiltersButton,
+  FiltersButtonBackIn,
+  FiltersContainer,
+  StyledBackdrop,
+} from "./Filters.styled.tsx";
 import { FiltersHeader } from "./FiltersHeader";
 import { Box, Slide } from "@mui/material";
 import { useState } from "react";
@@ -15,24 +20,34 @@ export const Filters = () => {
 
   return (
     <Box>
-      <Slide direction="right" in={isOpen}>
-        <FiltersContainer square={true}>
-          <FiltersHeader />
-          {isMobileView && (
-            <FiltersButton
-              variant="contained"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              filters
-            </FiltersButton>
-          )}
-          <PriceRange />
-          <Amenities />
-          <RoomAmenities />
-          <Neighbourhoods />
-          <HandicapAccessibility />
-        </FiltersContainer>
-      </Slide>
+      {isMobileView && (
+        <FiltersButtonBackIn
+          variant="contained"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          filters
+        </FiltersButtonBackIn>
+      )}
+      <StyledBackdrop open={isOpen}>
+        <Slide direction="right" in={isOpen}>
+          <FiltersContainer square={true}>
+            <FiltersHeader />
+            {isMobileView && (
+              <FiltersButton
+                variant="contained"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                filters
+              </FiltersButton>
+            )}
+            <PriceRange />
+            <Amenities />
+            <RoomAmenities />
+            <Neighbourhoods />
+            <HandicapAccessibility />
+          </FiltersContainer>
+        </Slide>
+      </StyledBackdrop>
     </Box>
   );
 };
