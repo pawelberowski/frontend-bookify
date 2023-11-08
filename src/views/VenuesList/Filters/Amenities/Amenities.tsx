@@ -1,11 +1,10 @@
 import {
   AccordionDetails,
-  AccordionSummary,
   Checkbox,
   FormControlLabel,
   Typography,
 } from "@mui/material";
-import { StyledAccordion } from "../Filters.styled.tsx";
+import {StyledAccordion, StyledAccordionSummary} from "../Filters.styled.tsx";
 import { ExpandIcon } from "../ExpandIcon";
 
 export const Amenities = () => {
@@ -31,13 +30,13 @@ export const Amenities = () => {
 
   return (
     <StyledAccordion elevation={0}>
-      <AccordionSummary
+      <StyledAccordionSummary
         expandIcon={<ExpandIcon />}
         aria-controls="amenities-content"
         id="amenities-header"
       >
         <Typography variant="body2">amenities</Typography>
-      </AccordionSummary>
+      </StyledAccordionSummary>
       <AccordionDetails>
         <Typography variant="body2">
           {generalAmenities.map((amenity) => (

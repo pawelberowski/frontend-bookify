@@ -1,11 +1,10 @@
 import {
   AccordionDetails,
-  AccordionSummary,
   Slider,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { StyledAccordion } from "../Filters.styled.tsx";
+import {StyledAccordion, StyledAccordionSummary} from "../Filters.styled.tsx";
 import { ExpandIcon } from "../ExpandIcon";
 
 export const PriceRange = () => {
@@ -17,13 +16,13 @@ export const PriceRange = () => {
   };
   return (
     <StyledAccordion elevation={0}>
-      <AccordionSummary
+      <StyledAccordionSummary
         expandIcon={<ExpandIcon />}
         aria-controls="price-range-content"
         id="price-range-header"
       >
         <Typography variant="body2">price range</Typography>
-      </AccordionSummary>
+      </StyledAccordionSummary>
       <AccordionDetails>
         <Typography variant="body2">
           <Slider

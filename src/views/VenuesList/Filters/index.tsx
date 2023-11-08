@@ -16,7 +16,7 @@ export const Filters = () => {
   return (
     <Box>
       <Slide direction="right" in={isOpen}>
-        <FiltersContainer>
+        <FiltersContainer square={true}>
           <FiltersHeader />
           {isMobileView && (
             <FiltersButton

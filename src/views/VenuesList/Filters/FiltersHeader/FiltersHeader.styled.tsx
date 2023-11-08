@@ -1,7 +1,7 @@
 import headerImageUrl from "/src/shared/assets/gradient.svg";
-import { Button, styled, Typography } from "@mui/material";
+import { Button, Paper, styled, Typography } from "@mui/material";
 
-export const FiltersHeaderContainer = styled("div")`
+export const FiltersHeaderContainer = styled(Paper)`
   background-image: url(${headerImageUrl});
   display: flex;
   justify-content: center;

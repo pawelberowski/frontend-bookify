@@ -1,11 +1,10 @@
 import {
   AccordionDetails,
-  AccordionSummary,
   Checkbox,
   FormControlLabel,
   Typography,
 } from "@mui/material";
-import { StyledAccordion } from "../Filters.styled.tsx";
+import {StyledAccordion, StyledAccordionSummary} from "../Filters.styled.tsx";
 import { ExpandIcon } from "../ExpandIcon";
 
 export const HandicapAccessibility = () => {
@@ -18,13 +17,13 @@ export const HandicapAccessibility = () => {
 
   return (
     <StyledAccordion elevation={0}>
-      <AccordionSummary
+      <StyledAccordionSummary
         expandIcon={<ExpandIcon />}
         aria-controls="handicap-accessibility-content"
         id="handicap-accessibility-header"
       >
         <Typography variant="body2">handicap accessibility</Typography>
-      </AccordionSummary>
+      </StyledAccordionSummary>
       <AccordionDetails>
         <Typography variant="body2">
           {handicapAccesibilities.map((accessibility) => (
