@@ -3,9 +3,9 @@ import { Amenities } from "./Amenities/Amenities.tsx";
 import { RoomAmenities } from "./RoomAmenities/RoomAmenities.tsx";
 import { Neighbourhoods } from "./Neighbourhoods/Neighbourhoods.tsx";
 import { HandicapAccessibility } from "./HandicapAccessibility/HandicapAccessibility.tsx";
-import { FiltersContainer } from "./Filters.styled.tsx";
+import { FiltersButton, FiltersContainer } from "./Filters.styled.tsx";
 import { FiltersHeader } from "./FiltersHeader";
-import { Box, Button, Slide } from "@mui/material";
+import { Box, Slide } from "@mui/material";
 import { useState } from "react";
 import { useIsMobileView } from "../../../shared/utils/useIsMobileView.tsx";
 
@@ -15,10 +15,17 @@ export const Filters = () => {
 
   return (
     <Box>
-      {isMobileView && <Button onClick={() => setIsOpen(!isOpen)}>Show</Button>}
-      <Slide direction="right" in={isOpen} mountOnEnter unmountOnExit>
+      <Slide direction="right" in={isOpen}>
         <FiltersContainer>
           <FiltersHeader />
+          {isMobileView && (
+            <FiltersButton
+              variant="contained"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              filters
+            </FiltersButton>
+          )}
           <PriceRange />
           <Amenities />
           <RoomAmenities />
