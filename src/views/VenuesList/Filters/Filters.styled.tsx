@@ -46,6 +46,17 @@ export const FiltersButton = styled(Button)(
 `,
 );
 
+export const BackInSortButton = styled(Button)(
+  ({ theme }) => `
+  position: absolute;
+  right: 0;
+  top: ${theme.spacing(18)};
+  border-radius: 18px 0 0 18px;
+  color: ${theme.palette.customGrey.contrastText};
+  text-transform: none;
+`,
+);
+
 export const FiltersButtonBackIn = styled(Button)(
   ({ theme }) => `
   position: absolute;

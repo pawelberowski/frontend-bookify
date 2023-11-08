@@ -1,6 +1,6 @@
 import { Venue } from "../../../../shared/types/Venue.ts";
 import { FunctionComponent } from "react";
-import { CircularProgress, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import {
   ArrowBackIos,
   ArrowForwardIos,
@@ -36,7 +36,7 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
     useVenueSlider(albumId);
 
   if (!photos) {
-    return <CircularProgress />;
+    return null;
   }
 
   return (
