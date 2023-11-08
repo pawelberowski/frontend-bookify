@@ -18,6 +18,22 @@ export const Filters = () => {
   const isMobileView = useIsMobileView();
   const [isOpen, setIsOpen] = useState(!isMobileView);
 
+  const filtersElement = (
+    <FiltersContainer square={true}>
+      <FiltersHeader />
+      {isMobileView && (
+        <FiltersButton variant="contained" onClick={() => setIsOpen(!isOpen)}>
+          filters
+        </FiltersButton>
+      )}
+      <PriceRange />
+      <Amenities />
+      <RoomAmenities />
+      <Neighbourhoods />
+      <HandicapAccessibility />
+    </FiltersContainer>
+  );
+
   return (
     <Box>
       {isMobileView && (
@@ -28,26 +44,15 @@ export const Filters = () => {
           filters
         </FiltersButtonBackIn>
       )}
-      <StyledBackdrop open={isOpen}>
-        <Slide direction="right" in={isOpen}>
-          <FiltersContainer square={true}>
-            <FiltersHeader />
-            {isMobileView && (
-              <FiltersButton
-                variant="contained"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                filters
-              </FiltersButton>
-            )}
-            <PriceRange />
-            <Amenities />
-            <RoomAmenities />
-            <Neighbourhoods />
-            <HandicapAccessibility />
-          </FiltersContainer>
-        </Slide>
-      </StyledBackdrop>
+      {isMobileView ? (
+        <StyledBackdrop open={isOpen}>
+          <Slide direction="right" in={isOpen}>
+            {filtersElement}
+          </Slide>
+        </StyledBackdrop>
+      ) : (
+        filtersElement
+      )}
     </Box>
   );
 };

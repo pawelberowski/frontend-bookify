@@ -13,9 +13,11 @@ export const FiltersContainer = styled(Paper)`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(8)};
-  position: absolute;
-  top: 0;
-  left: 0;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 `;
 
 export const StyledAccordion = styled(Accordion)`
