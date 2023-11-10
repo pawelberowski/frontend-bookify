@@ -11,7 +11,13 @@ import {
   StyledBackdrop,
 } from "./Filters.styled.tsx";
 import { FiltersHeader } from "./FiltersHeader";
-import { Box, Slide } from "@mui/material";
+import {
+  Box,
+  Checkbox,
+  FormControlLabel,
+  Slide,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
 import { useIsMobileView } from "../../../shared/utils/useIsMobileView.tsx";
 import { Label, StyledHeader } from "./FiltersHeader/FiltersHeader.styled.tsx";
@@ -42,11 +48,28 @@ export const Filters = () => {
   );
 
   const sortElement = (
-    <StyledPaper>
+    <StyledPaper square={true}>
       <StyledHeader elevation={0} square={true}>
         <Label variant="body1">SORT</Label>
       </StyledHeader>
-      <SortButton onClick={() => setIsSortOpen(!isSortOpen)}>sort</SortButton>
+      <FormControlLabel
+        control={<Checkbox />}
+        label={<Typography variant="body2">by the most expensive</Typography>}
+      />
+      <FormControlLabel
+        control={<Checkbox />}
+        label={<Typography variant="body2">by the cheapest</Typography>}
+      />
+      <FormControlLabel
+        control={<Checkbox />}
+        label={<Typography variant="body2">by top rated</Typography>}
+      />
+      <SortButton
+        variant="contained"
+        onClick={() => setIsSortOpen(!isSortOpen)}
+      >
+        sort
+      </SortButton>
     </StyledPaper>
   );
 

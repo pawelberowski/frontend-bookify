@@ -15,7 +15,7 @@ export const StyledPaper = styled(Paper)`
 export const SortButton = styled(Button)(
   ({ theme }) => `
   position: absolute;
-  left: -${theme.spacing(17.75)};
+  left: -${theme.spacing(16)};
   top: ${theme.spacing(18)};
   border-radius: 18px 0 0 18px;
   color: ${theme.palette.customGrey.contrastText};
