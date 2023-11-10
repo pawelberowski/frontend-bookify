@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { VenueDetails } from "../../../shared/types/VenueDetails.ts";
+import { VenueDetails } from "../../../../shared/types/VenueDetails.ts";
 import { AmenitiesList } from "./AmenitiesList";
 import { StayingDetails } from "./StayingDetails";
 import {

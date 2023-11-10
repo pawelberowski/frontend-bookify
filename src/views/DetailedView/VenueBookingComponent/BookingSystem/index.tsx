@@ -12,9 +12,9 @@ import {
   BookingSystemContainer,
   GreyDivider,
   PriceWrapper,
-} from "./bookingSystem.styled";
+} from "./bookingSystem.styled.tsx";
 import { FunctionComponent, useState } from "react";
-import { useExchangeRateContext } from "../../../shared/ExchangeRateContext/useExchangeRateContext.tsx";
+import { useExchangeRateContext } from "../../../../shared/ExchangeRateContext/useExchangeRateContext.tsx";
 import { useCalendarDates } from "./useCalendarDates.tsx";
 import { getNumberOfDays } from "./getNumberOfDays.tsx";
 

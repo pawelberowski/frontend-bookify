@@ -1,4 +1,4 @@
-import { useVenueSlider } from "../../VenuesList/VenueTiles/VenueTile/useVenueSlider.tsx";
+import { useVenueSlider } from "../../../VenuesList/VenueTiles/VenueTile/useVenueSlider.tsx";
 import { CircularProgress } from "@mui/material";
 import {
   ArrowBackIos,

@@ -1,4 +1,4 @@
-import { useVenuePhotos } from "../../VenuesList/VenueTiles/VenueTile/useVenuePhotos.tsx";
+import { useVenuePhotos } from "../../../VenuesList/VenueTiles/VenueTile/useVenuePhotos.tsx";
 import { CircularProgress, ImageListItem } from "@mui/material";
 import { FunctionComponent } from "react";
 import { StyledImageList } from "./GalleryContainer.styled.tsx";

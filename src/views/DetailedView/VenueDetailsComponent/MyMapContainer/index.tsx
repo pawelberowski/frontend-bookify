@@ -1,6 +1,6 @@
 import { Marker, Popup, TileLayer } from "react-leaflet";
 import { MapWrapper } from "./MyMapContainer.styled.tsx";
-import { Coordinates } from "../../../shared/types/Venue.ts";
+import { Coordinates } from "../../../../shared/types/Venue.ts";
 import { FunctionComponent } from "react";
 
 interface MyMapContainer {

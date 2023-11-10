@@ -1,7 +1,7 @@
 import Calendar from "react-calendar";
 import { Box, styled, css } from "@mui/material";
-import calendarArrow from "../../../../shared/assets/calendar-arrow.svg";
-import calendarDoubleArrow from "../../../../shared/assets/calendar-double-arrow.svg";
+import calendarArrow from "../../../../../shared/assets/calendar-arrow.svg";
+import calendarDoubleArrow from "../../../../../shared/assets/calendar-double-arrow.svg";
 
 export const CalendarWrapper = styled(Box)`
   display: flex;

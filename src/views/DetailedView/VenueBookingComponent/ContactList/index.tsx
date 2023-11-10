@@ -1,6 +1,6 @@
 import { ListItemIcon, Typography } from "@mui/material";
-import PhoneIcon from "../../../shared/assets/phone.svg";
-import MailIcon from "../../../shared/assets/mail.svg";
+import PhoneIcon from "../../../../shared/assets/phone.svg";
+import MailIcon from "../../../../shared/assets/mail.svg";
 import { FunctionComponent } from "react";
 import {
   EmailWrapper,

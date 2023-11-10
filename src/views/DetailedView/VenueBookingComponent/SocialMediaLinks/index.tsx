@@ -1,8 +1,8 @@
 import { IconButton } from "@mui/material";
-import FacebookIcon from "../../../shared/assets/facebook.svg";
-import InstagramIcon from "../../../shared/assets/instagram.svg";
-import TweeterIcon from "../../../shared/assets/tweeter.svg";
-import WebIcon from "../../../shared/assets/web.svg";
+import FacebookIcon from "../../../../shared/assets/facebook.svg";
+import InstagramIcon from "../../../../shared/assets/instagram.svg";
+import TweeterIcon from "../../../../shared/assets/tweeter.svg";
+import WebIcon from "../../../../shared/assets/web.svg";
 import { Wrapper } from "./SocialMediaLinks.styled.tsx";
 export const SocialMediaLinks = () => {
   return (

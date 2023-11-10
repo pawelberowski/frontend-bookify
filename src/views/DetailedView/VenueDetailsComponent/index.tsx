@@ -1,7 +1,7 @@
 import { Box, Rating, Typography } from "@mui/material";
-import { PhotoSlider } from "../PhotoSlider";
-import { DisplaySwitches } from "../DisplaySwitches";
-import { DisplayContainer } from "../DisplayContainer";
+import { PhotoSlider } from "./PhotoSlider";
+import { DisplaySwitches } from "./DisplaySwitches";
+import { DisplayContainer } from "./DisplayContainer";
 import { VenueDetails } from "../../../shared/types/VenueDetails.ts";
 import { FunctionComponent } from "react";
 import { useCurrentDisplay } from "../useCurrentDisplay.tsx";

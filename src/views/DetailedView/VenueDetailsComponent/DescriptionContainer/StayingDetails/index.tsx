@@ -1,9 +1,9 @@
 import { List, ListItem, ListItemIcon, Typography } from "@mui/material";
 import { FunctionComponent } from "react";
-import { VenueDetails } from "../../../../shared/types/VenueDetails.ts";
-import BedIcon from "../../../../shared/assets/bed.svg";
-import ClockIcon from "../../../../shared/assets/clock.svg";
-import CityIcon from "../../../../shared/assets/city.svg";
+import { VenueDetails } from "../../../../../shared/types/VenueDetails.ts";
+import BedIcon from "../../../../../shared/assets/bed.svg";
+import ClockIcon from "../../../../../shared/assets/clock.svg";
+import CityIcon from "../../../../../shared/assets/city.svg";
 
 interface Props {
   venueDetails: VenueDetails;
