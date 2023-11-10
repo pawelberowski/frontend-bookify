@@ -75,5 +75,15 @@ export const createBookifyTheme = () => {
         letterSpacing: "0.48px",
       },
     },
+    components: {
+      MuiCheckbox: {
+        styleOverrides: {
+          root: {
+            color: theme.palette.customGrey.light,
+            margin: theme.spacing(2),
+          },
+        },
+      },
+    },
   });
 };
