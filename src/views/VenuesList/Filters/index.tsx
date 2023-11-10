@@ -11,20 +11,10 @@ import {
   StyledBackdrop,
 } from "./Filters.styled.tsx";
 import { FiltersHeader } from "./FiltersHeader";
-import {
-  Box,
-  Checkbox,
-  FormControlLabel,
-  Slide,
-  Typography,
-} from "@mui/material";
+import { Box, Slide } from "@mui/material";
 import { useState } from "react";
 import { useIsMobileView } from "../../../shared/utils/useIsMobileView.tsx";
-import { Label, StyledHeader } from "./FiltersHeader/FiltersHeader.styled.tsx";
-import {
-  SortButton,
-  StyledPaper,
-} from "./SortContainer/SortContainer.styled.tsx";
+import { SortContainer } from "./SortContainer";
 
 export const Filters = () => {
   const isMobileView = useIsMobileView();
@@ -45,32 +35,6 @@ export const Filters = () => {
       <Neighbourhoods />
       <HandicapAccessibility />
     </FiltersContainer>
-  );
-
-  const sortElement = (
-    <StyledPaper square={true}>
-      <StyledHeader elevation={0} square={true}>
-        <Label variant="body1">SORT</Label>
-      </StyledHeader>
-      <FormControlLabel
-        control={<Checkbox />}
-        label={<Typography variant="body2">by the most expensive</Typography>}
-      />
-      <FormControlLabel
-        control={<Checkbox />}
-        label={<Typography variant="body2">by the cheapest</Typography>}
-      />
-      <FormControlLabel
-        control={<Checkbox />}
-        label={<Typography variant="body2">by top rated</Typography>}
-      />
-      <SortButton
-        variant="contained"
-        onClick={() => setIsSortOpen(!isSortOpen)}
-      >
-        sort
-      </SortButton>
-    </StyledPaper>
   );
 
   return (
@@ -98,11 +62,10 @@ export const Filters = () => {
               {filtersElement}
             </Slide>
           </StyledBackdrop>
-          <StyledBackdrop open={isSortOpen}>
-            <Slide direction="left" in={isSortOpen}>
-              {sortElement}
-            </Slide>
-          </StyledBackdrop>
+          <SortContainer
+            isSortOpen={isSortOpen}
+            setIsSortOpen={setIsSortOpen}
+          />
         </Box>
       ) : (
         filtersElement
