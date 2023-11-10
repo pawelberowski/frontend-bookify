@@ -1,4 +1,4 @@
-import { Box, Divider, styled, Typography } from "@mui/material";
+import { Box, Divider, styled } from "@mui/material";
 
 export const DetailedViewContainer = styled(Box)(
   ({ theme }) => `
@@ -7,37 +7,6 @@ export const DetailedViewContainer = styled(Box)(
   margin-top: ${theme.spacing(6)};
 `,
 );
-
-export const LeftPanelContainer = styled(Box)(
-  ({ theme }) => `
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing(4)};
-  max-width: 55%;
-`,
-);
-
-export const NameAndScoreContainer = styled(Box)`
-  display: flex;
-  justify-content: space-between;
-`;
-export const NameAndAddressContainer = styled(Box)``;
-
-export const AddressWrapper = styled(Typography)`
-  font-weight: 400;
-`;
-
-export const ScoreContainer = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-`;
-
-export const ReviewsNumberWrapper = styled(Typography)`
-  line-height: 150%;
-  display: flex;
-  justify-content: flex-end;
-`;
 
 export const LabelDivider = styled(Divider)(
   ({ theme }) => `
@@ -48,6 +17,6 @@ export const LabelDivider = styled(Divider)(
 `,
 );
 
-export const RightPanelContainer = styled(Box)`
+export const VenueBookingContainer = styled(Box)`
   max-width: 382px;
 `;
