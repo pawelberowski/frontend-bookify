@@ -9,6 +9,11 @@ export const LabelDivider = styled(Divider)(
 `,
 );
 
-export const VenueBookingContainer = styled(Box)`
+export const VenueBookingContainer = styled(Box)(
+  ({ theme }) => `
   max-width: 382px;
-`;
+  ${theme.breakpoints.down("md")} {
+    max-width: 94%;
+  }
+`,
+);

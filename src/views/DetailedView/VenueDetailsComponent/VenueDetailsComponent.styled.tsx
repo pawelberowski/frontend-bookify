@@ -4,8 +4,11 @@ export const VenueDetailsContainer = styled(Box)(
   ({ theme }) => `
   display: flex;
   flex-direction: column;
-  gap: ${theme.spacing(4)};
   max-width: 55%;
+  gap: ${theme.spacing(4)};
+  ${theme.breakpoints.down("md")} {
+    max-width: 94%;
+  }
 `,
 );
 

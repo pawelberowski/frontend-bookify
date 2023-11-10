@@ -5,6 +5,10 @@ export const DetailedViewContainer = styled(Box)(
   display: flex;
   justify-content: space-around;
   margin-top: ${theme.spacing(6)};
+  ${theme.breakpoints.down("md")} {
+    flex-direction: column;
+    align-items: center;
+  }
 `,
 );
 
