@@ -24,6 +24,9 @@ export const VenueTilesWrapper = styled(Box)(
   display: flex;
   flex-wrap: wrap;
   gap: ${theme.spacing(2)};
+  ${theme.breakpoints.down("md")} {
+    justify-content: center;
+  }
 `,
 );
 

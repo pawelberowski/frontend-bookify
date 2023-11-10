@@ -10,6 +10,7 @@ import {
 } from "./VenueTiles.styled.tsx";
 import { Pagination, Typography } from "@mui/material";
 import { SetURLSearchParams } from "react-router-dom";
+import { useIsMobileView } from "../../../shared/utils/useIsMobileView.tsx";
 
 interface VenueTiles {
   venues: Venue[];
@@ -22,6 +23,7 @@ export const VenueTiles: FunctionComponent<VenueTiles> = ({
   numberOfVenues,
   setSearchParams,
 }) => {
+  const isMobile = useIsMobileView();
   const pagesNumber = Math.ceil((numberOfVenues ?? 1) / 18);
 
   const changePage = (_event: ChangeEvent<unknown>, value: number) =>
@@ -29,12 +31,14 @@ export const VenueTiles: FunctionComponent<VenueTiles> = ({
 
   return (
     <VenueTilesContainer>
-      <ShowAndSortContainer>
-        <Typography variant="body2">show 18 on the page</Typography>
-        <SortButton variant="text">
-          <Typography variant="h5">sort</Typography>
-        </SortButton>
-      </ShowAndSortContainer>
+      {!isMobile && (
+        <ShowAndSortContainer>
+          <Typography variant="body2">show 18 on the page</Typography>
+          <SortButton variant="text">
+            <Typography variant="h5">sort</Typography>
+          </SortButton>
+        </ShowAndSortContainer>
+      )}
       <VenueTilesWrapper>
         {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
       </VenueTilesWrapper>
