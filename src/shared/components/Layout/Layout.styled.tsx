@@ -5,6 +5,7 @@ export const LayoutContainer = styled(Box)`
   width: 100%;
   height: 100%;
   overflow: scroll;
+  flex-direction: column;
 `;
 
 export const FiltersAndContentContainer = styled(Box)`
