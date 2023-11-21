@@ -13,7 +13,8 @@ export const VenueBookingContainer = styled(Box)(
   ({ theme }) => `
   max-width: 382px;
   ${theme.breakpoints.down("md")} {
-    max-width: 94%;
+    margin-top: ${theme.spacing(8)};
+    max-width: 92%;
   }
 `,
 );
