@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+
 export const createBookifyTheme = () => {
   const theme = createTheme({
     palette: {
@@ -78,9 +79,22 @@ export const createBookifyTheme = () => {
     components: {
       MuiCheckbox: {
         styleOverrides: {
+          ul: {
+            flexWrap: "nowrap",
+          },
           root: {
             color: theme.palette.customGrey.light,
             margin: theme.spacing(2),
+          },
+        },
+      },
+      MuiPagination: {
+        styleOverrides: {
+          root: {
+            "& .Mui-selected": {
+              color: theme.palette.customGrey.contrastText,
+              backgroundColor: theme.palette.primary.main,
+            },
           },
         },
       },
