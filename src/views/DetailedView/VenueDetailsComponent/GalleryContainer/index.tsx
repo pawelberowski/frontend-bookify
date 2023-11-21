@@ -1,7 +1,7 @@
 import { useVenuePhotos } from "../../../VenuesList/VenueTiles/VenueTile/useVenuePhotos.tsx";
-import { CircularProgress, ImageListItem } from "@mui/material";
+import { CircularProgress, ImageList, ImageListItem } from "@mui/material";
 import { FunctionComponent } from "react";
-import { StyledImageList } from "./GalleryContainer.styled.tsx";
+import { useIsMobileView } from "../../../../shared/utils/useIsMobileView.tsx";
 
 interface GalleryContainer {
   albumId: number;
@@ -10,13 +10,21 @@ export const GalleryContainer: FunctionComponent<GalleryContainer> = ({
   albumId,
 }) => {
   const photos = useVenuePhotos(albumId);
+  const isMobile = useIsMobileView();
+
+  function getColumnsNumber(isMobile: boolean) {
+    if (isMobile) {
+      return 2;
+    }
+    return 3;
+  }
 
   if (!photos) {
     return <CircularProgress />;
   }
 
   return (
-    <StyledImageList rowHeight={200} gap={32}>
+    <ImageList cols={getColumnsNumber(isMobile)}>
       {photos.map((photo) => {
         return (
           <ImageListItem key={photo.title}>
@@ -24,6 +32,6 @@ export const GalleryContainer: FunctionComponent<GalleryContainer> = ({
           </ImageListItem>
         );
       })}
-    </StyledImageList>
+    </ImageList>
   );
 };
