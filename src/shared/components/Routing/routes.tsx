@@ -5,7 +5,7 @@ import { VenuesList } from "../../../views/VenuesList";
 import { AboutUs } from "../../../views/AboutUs";
 import { Favourites } from "../../../views/Favourites";
 import { StartHosting } from "../../../views/StartHosting";
-import { LoginView } from "../../../views/Login";
+import { LoginView } from "../../../views/LoginView";
 
 export const routes: Array<Route> = [
   {

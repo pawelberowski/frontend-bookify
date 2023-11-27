@@ -79,9 +79,6 @@ export const createBookifyTheme = () => {
     components: {
       MuiCheckbox: {
         styleOverrides: {
-          ul: {
-            flexWrap: "nowrap",
-          },
           root: {
             color: theme.palette.customGrey.light,
             margin: theme.spacing(2),
@@ -90,10 +87,12 @@ export const createBookifyTheme = () => {
       },
       MuiPagination: {
         styleOverrides: {
+          ul: {
+            flexWrap: "nowrap",
+          },
           root: {
             "& .Mui-selected": {
               color: theme.palette.customGrey.contrastText,
-              backgroundColor: theme.palette.primary.main,
             },
           },
         },
