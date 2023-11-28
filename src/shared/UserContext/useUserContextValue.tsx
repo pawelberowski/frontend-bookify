@@ -6,10 +6,6 @@ import { redirect } from "react-router-dom";
 export function useUserContextValue(): UserContextData {
   const [user, setUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    authenticate();
-  }, []);
-
   const authenticate = useCallback(() => {
     authenticationApi
       .authentication()
@@ -23,6 +19,10 @@ export function useUserContextValue(): UserContextData {
         throw new error();
       });
   }, []);
+
+  useEffect(() => {
+    authenticate();
+  }, [authenticate]);
 
   const handleLogIn = useCallback((email: string, password: string) => {
     authenticationApi

@@ -11,7 +11,6 @@ import HamburgerIcon from "../../../assets/hamburger.svg";
 import { useUserContextValue } from "../../../UserContext/useUserContextValue.tsx";
 export const Header = () => {
   const isMobileView = useIsMobileView();
-
   const { user } = useUserContextValue();
 
   return (
@@ -21,9 +20,15 @@ export const Header = () => {
           <img src={HamburgerIcon} alt="Three horizontal lines" />
           <Logo>BOOKIFY</Logo>
           <LinksContainer>
-            <LowerCaseButton href="/login" color="primary">
-              <Typography variant="subtitle1">login</Typography>
-            </LowerCaseButton>
+            {user ? (
+              <LowerCaseButton href="/logout" color="primary">
+                <Typography variant="subtitle1">{`${user.name} log out`}</Typography>
+              </LowerCaseButton>
+            ) : (
+              <LowerCaseButton href="/login" color="primary">
+                <Typography variant="subtitle1">login</Typography>
+              </LowerCaseButton>
+            )}
           </LinksContainer>
         </StyledAppBar>
       ) : (
@@ -39,13 +44,15 @@ export const Header = () => {
             <LowerCaseButton href="/hosting" color="inherit">
               <Typography variant="subtitle1">start hosting</Typography>
             </LowerCaseButton>
-            <LowerCaseButton href="/login" color="primary">
-              {user ? (
-                <Typography>{user.name}</Typography>
-              ) : (
+            {user ? (
+              <LowerCaseButton href="/logout" color="primary">
+                <Typography variant="subtitle1">{`${user.name} log out`}</Typography>
+              </LowerCaseButton>
+            ) : (
+              <LowerCaseButton href="/login" color="primary">
                 <Typography variant="subtitle1">login</Typography>
-              )}
-            </LowerCaseButton>
+              </LowerCaseButton>
+            )}
           </LinksContainer>
         </StyledAppBar>
       )}

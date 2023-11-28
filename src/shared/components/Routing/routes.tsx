@@ -6,6 +6,7 @@ import { AboutUs } from "../../../views/AboutUs";
 import { Favourites } from "../../../views/Favourites";
 import { StartHosting } from "../../../views/StartHosting";
 import { LoginView } from "../../../views/LoginView";
+import { LogOutView } from "../../../views/LogOutView";
 
 export const routes: Array<Route> = [
   {
@@ -37,5 +38,10 @@ export const routes: Array<Route> = [
     path: RoutesEnum.Login,
     Component: <LoginView />,
     name: "login",
+  },
+  {
+    path: RoutesEnum.Logout,
+    Component: <LogOutView />,
+    name: "logout",
   },
 ];
