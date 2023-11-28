@@ -8,8 +8,11 @@ import {
 import { Box, Typography } from "@mui/material";
 import { useIsMobileView } from "../../../utils/useIsMobileView.tsx";
 import HamburgerIcon from "../../../assets/hamburger.svg";
+import { useUserContextValue } from "../../../UserContext/useUserContextValue.tsx";
 export const Header = () => {
   const isMobileView = useIsMobileView();
+
+  const { user } = useUserContextValue();
 
   return (
     <Box>
@@ -37,7 +40,11 @@ export const Header = () => {
               <Typography variant="subtitle1">start hosting</Typography>
             </LowerCaseButton>
             <LowerCaseButton href="/login" color="primary">
-              <Typography variant="subtitle1">login</Typography>
+              {user ? (
+                <Typography>{user.name}</Typography>
+              ) : (
+                <Typography variant="subtitle1">login</Typography>
+              )}
             </LowerCaseButton>
           </LinksContainer>
         </StyledAppBar>
