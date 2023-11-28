@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { authenticationApi } from "../api/authenticationApi.tsx";
 
 function useLogInForm() {
   const [email, setEmail] = useState("");
@@ -14,17 +15,7 @@ function useLogInForm() {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    fetch("http://localhost:3000/authentication/log-in", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-      credentials: "include",
-    }).catch(() => {
+    authenticationApi.logIn(email, password).catch(() => {
       console.log("Something went wrong when logging in");
     });
   };
