@@ -1,35 +1,35 @@
-import { useState } from "react";
-import { Button, Input, Typography } from "@mui/material";
-import { LoginViewStyled } from "./LoginView.styled.tsx";
+import { Button, Typography } from "@mui/material";
+import { LoginViewStyled, StyledInput } from "./LoginView.styled.tsx";
+import useLogInForm from "../../shared/utils/useLogInForm.tsx";
 
 export const LoginView = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [dataInput, setDataInput] = useState({});
-
-  const submitInput = () => {
-    const credentials = {
-      email: email,
-      password: password,
-    };
-    setDataInput(credentials);
-  };
+  const {
+    email,
+    password,
+    handleSubmit,
+    handleEmailChange,
+    handlePasswordChange,
+  } = useLogInForm();
 
   return (
-    <LoginViewStyled>
+    <LoginViewStyled action="" onSubmit={handleSubmit}>
       <Typography>Email</Typography>
-      <Input
+      <StyledInput
+        id="email"
+        type="text"
         placeholder="Enter email"
-        onChange={() => setEmail}
+        onChange={handleEmailChange}
         value={email}
-      ></Input>
+      ></StyledInput>
       <Typography>Password</Typography>
-      <Input
+      <StyledInput
+        id="password"
+        type="password"
         placeholder="Enter password"
-        onChange={() => setPassword}
+        onChange={handlePasswordChange}
         value={password}
-      ></Input>
-      <Button onClick={submitInput}>Login</Button>
+      ></StyledInput>
+      <Button type="submit">Submit</Button>
     </LoginViewStyled>
   );
 };
