@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { LoginViewStyled, StyledInput } from "./LoginView.styled.tsx";
-import useLogInForm from "../../shared/utils/useLogInForm.tsx";
+import useLogInForm from "./useLogInForm.tsx";
 
 export const LoginView = () => {
   const {

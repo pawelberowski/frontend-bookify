@@ -1,10 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { authenticationApi } from "../api/authenticationApi.tsx";
+import { useUserContext } from "../../shared/UserContext/useUserContext.tsx";
 
 function useLogInForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [error, setError] = useState<string | null>(null);
+  const { handleLogIn } = useUserContext();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
@@ -15,8 +16,8 @@ function useLogInForm() {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    authenticationApi.logIn(email, password).catch(() => {
-      console.log("Something went wrong when logging in");
+    handleLogIn(email, password).catch((error) => {
+      setError(error);
     });
   };
 
@@ -26,6 +27,7 @@ function useLogInForm() {
     handleSubmit,
     handleEmailChange,
     handlePasswordChange,
+    error,
   };
 }
 

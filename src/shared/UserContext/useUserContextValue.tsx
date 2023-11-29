@@ -15,8 +15,10 @@ export function useUserContextValue(): UserContextData {
       .catch((error) => {
         if (error.statusCode === "401") {
           redirect("/login");
+        } else {
+          console.log(error);
         }
-        throw new error();
+
       });
   }, []);
 
@@ -25,13 +27,15 @@ export function useUserContextValue(): UserContextData {
   }, [authenticate]);
 
   const handleLogIn = useCallback((email: string, password: string) => {
-    authenticationApi
+    return authenticationApi
       .logIn(email, password)
       .then((response) => {
         setUser(response.data);
+        return response;
       })
-      .catch(() => {
+      .catch((error) => {
         console.log("Something went wrong when logging in");
+        return error;
       });
   }, []);
 
