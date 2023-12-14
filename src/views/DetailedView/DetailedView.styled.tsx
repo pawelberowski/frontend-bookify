@@ -1,63 +1,21 @@
-import { Box, Button, Divider, Paper, styled, Typography } from "@mui/material";
+import { Box, Button, styled } from "@mui/material";
 
 export const DetailedViewContainer = styled(Box)(
   ({ theme }) => `
   display: flex;
   justify-content: space-around;
   margin-top: ${theme.spacing(6)};
+  ${theme.breakpoints.down("md")} {
+    flex-direction: column;
+    align-items: center;
+  }
 `,
 );
 
-export const LeftPanelContainer = styled(Box)(
+export const BackButton = styled(Button)(
   ({ theme }) => `
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing(4)};
-  max-width: 55%;
+  gap: ${theme.spacing(2.5)};
+  margin: ${theme.spacing(5)};
+  text-transform: none;
 `,
 );
-
-export const NameAndScoreContainer = styled(Box)`
-  display: flex;
-  justify-content: space-between;
-`;
-export const NameAndAddressContainer = styled(Box)``;
-
-export const AddressWrapper = styled(Typography)`
-  font-weight: 400;
-`;
-
-export const ScoreContainer = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-`;
-
-export const ReviewsNumberWrapper = styled(Typography)`
-  line-height: 150%;
-  display: flex;
-  justify-content: flex-end;
-`;
-
-export const DisplaySwitchesContainer = styled(Paper)`
-  display: flex;
-  justify-content: space-around;
-`;
-
-export const DisplaySwitchWrapper = styled(Button)`
-  text-transform: lowercase;
-  line-height: 150%;
-`;
-
-export const LabelDivider = styled(Divider)(
-  ({ theme }) => `
-  margin-top: 16px;
-  margin-bottom: 40px;
-  border-bottom-width: 2px;
-  border-color: ${theme.palette.customGrey.darker};
-`,
-);
-
-export const RightPanelContainer = styled(Box)`
-  max-width: 382px;
-`;

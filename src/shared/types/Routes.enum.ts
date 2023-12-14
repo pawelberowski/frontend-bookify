@@ -5,4 +5,5 @@ export enum RoutesEnum {
   YourFavourites = "/favourites",
   StartHosting = "/hosting",
   Login = "/login",
+  Logout = "/logout",
 }

@@ -5,12 +5,20 @@ import { VenueTiles } from "./VenueTiles";
 import { VenuesListContainerStyled } from "./VenuesList.styled.tsx";
 
 export const VenuesList = () => {
-  const { venues } = useVenuesList();
+  const { venues, numberOfVenues, setSearchParams } = useVenuesList();
 
   return (
     <VenuesListContainerStyled>
       <Filters />
-      {venues ? <VenueTiles venues={venues} /> : <CircularProgress />}
+      {venues ? (
+        <VenueTiles
+          venues={venues}
+          numberOfVenues={numberOfVenues}
+          setSearchParams={setSearchParams}
+        />
+      ) : (
+        <CircularProgress />
+      )}
     </VenuesListContainerStyled>
   );
 };

@@ -1,12 +1,11 @@
 import {
-  Accordion,
   AccordionDetails,
-  AccordionSummary,
   Checkbox,
   FormControlLabel,
   Typography,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { StyledAccordion, StyledAccordionSummary } from "../Filters.styled.tsx";
+import { ExpandIcon } from "../ExpandIcon";
 
 export const Neighbourhoods = () => {
   const neighbourhoods = [
@@ -29,16 +28,16 @@ export const Neighbourhoods = () => {
   ];
 
   return (
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
+    <StyledAccordion elevation={0}>
+      <StyledAccordionSummary
+        expandIcon={<ExpandIcon />}
         aria-controls="neighbourhoods-content"
         id="neighbourhoods-header"
       >
-        <Typography>neighbourhoods</Typography>
-      </AccordionSummary>
+        <Typography variant="body2">neighbourhoods</Typography>
+      </StyledAccordionSummary>
       <AccordionDetails>
-        <Typography>
+        <Typography variant="body2">
           {neighbourhoods.map((neighbourhood) => (
             <FormControlLabel
               key={neighbourhood}
@@ -48,6 +47,6 @@ export const Neighbourhoods = () => {
           ))}
         </Typography>
       </AccordionDetails>
-    </Accordion>
+    </StyledAccordion>
   );
 };

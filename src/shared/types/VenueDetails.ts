@@ -1,11 +1,11 @@
 import { LocationDetails } from "./Venue.ts";
 
-interface SleepingDetails {
+export interface SleepingDetails {
   maxCapacity: number;
   amountOfBeds: number;
 }
 
-interface ContactDetails {
+export interface ContactDetails {
   phone: string;
   email: string;
 }

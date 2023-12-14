@@ -1,68 +1,40 @@
-import {
-  Box,
-  Button,
-  styled,
-  Typography,
-  TypographyProps,
-} from "@mui/material";
+import { Box, Button, styled, Typography } from "@mui/material";
 import heroImageUrl from "/src/shared/assets/hero.svg";
+import mobileHeroImageUrl from "/src/shared/assets/hero-mobile.svg";
 
-export const FilterContainerStyled = styled(Box)`
+export const FilterContainerStyled = styled(Box)(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 524px;
+  min-height: 524px;
   background-image: url(${heroImageUrl});
   background-size: cover, cover;
-`;
+  ${theme.breakpoints.down("md")} {
+    background-image: url(${mobileHeroImageUrl});
+  }
+`,
+);
 
-export const FilterElementsContainer = styled(Box)`
-  width: 100%;
-  height: 65%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-`;
-export const Motto = styled((props: TypographyProps) => (
-  <Typography {...props} variant={"h2"} />
-))`
+export const EmptyBox = styled(Box)(
+  ({ theme }) => `
+  min-height: ${theme.spacing(10)};
+`,
+);
+
+export const Motto = styled(Typography)(
+  ({ theme }) => `
   align-self: end;
-  margin-right: ${({ theme }) => theme.spacing(25)};
-`;
-
-export const FiltersBarWrapper = styled(Box)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const FiltersBar = styled(Box)`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`;
-export const FilterWrapper = styled(Box)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border-radius: 18px;
-  width: 160px;
-  height: 40px;
-`;
-
-export const StyledInput = styled("input")`
-  border: none;
-  width: 100px;
-`;
-
-export const ToggleButton = styled(Button)`
-  text-transform: none;
-`;
+  margin-right: ${theme.spacing(25)};
+  ${theme.breakpoints.down("md")} {
+    font-size: 25px;
+    font-weight: 500;
+    margin: ${theme.spacing(2)};
+  }
+`,
+);
 
 export const SearchButton = styled(Button)(
   ({ theme }) => `

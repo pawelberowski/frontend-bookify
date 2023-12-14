@@ -1,6 +1,6 @@
 import { Venue } from "../../../../shared/types/Venue.ts";
 import { FunctionComponent } from "react";
-import { CircularProgress, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import {
   ArrowBackIos,
   ArrowForwardIos,
@@ -23,6 +23,7 @@ import {
   StyledLink,
   VenueTileContainer,
 } from "./VenueTile.styled.tsx";
+import { PricePerNight } from "./PricePerNight";
 
 interface VenueTileProps {
   venue: Venue;
@@ -35,7 +36,7 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
     useVenueSlider(albumId);
 
   if (!photos) {
-    return <CircularProgress />;
+    return null;
   }
 
   return (
@@ -60,7 +61,7 @@ export const VenueTile: FunctionComponent<VenueTileProps> = ({ venue }) => {
           </RowContainer>
           <RowContainer>
             <PriceAndLocation>
-              <Typography variant="h5">{pricePerNightInEUR}</Typography>
+              <PricePerNight priceInEur={pricePerNightInEUR} />
               <LocationWrapper>
                 <Place />
                 <Typography variant="caption">{location.name}</Typography>

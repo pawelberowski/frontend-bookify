@@ -5,5 +5,8 @@ export const VenuesListContainerStyled = styled(Box)(
   display: flex;
   padding: ${theme.spacing(10)};
   gap: ${theme.spacing(6)};
+  ${theme.breakpoints.down("md")} {
+    gap: 0;
+  }
   `,
 );

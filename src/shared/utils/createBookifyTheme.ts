@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+
 export const createBookifyTheme = () => {
   const theme = createTheme({
     palette: {
@@ -11,8 +12,9 @@ export const createBookifyTheme = () => {
       customGrey: {
         main: "rgba(0, 0, 0, 0.60)",
         darker: "rgba(0, 0, 0, 0.75)",
-        lighter: "rgba(0, 0, 0, 0.50)",
-        lightest: "rgba(0, 0, 0, 0.25)",
+        light: "rgba(0, 0, 0, 0.50)",
+        lighter: "rgba(0, 0, 0, 0.25)",
+        lightest: "rgba(0, 0, 0, 0.1)",
         contrastText: "#fff",
       },
     },
@@ -72,6 +74,28 @@ export const createBookifyTheme = () => {
         fontSize: "16px",
         fontWeight: "400",
         letterSpacing: "0.48px",
+      },
+    },
+    components: {
+      MuiCheckbox: {
+        styleOverrides: {
+          root: {
+            color: theme.palette.customGrey.light,
+            margin: theme.spacing(2),
+          },
+        },
+      },
+      MuiPagination: {
+        styleOverrides: {
+          ul: {
+            flexWrap: "nowrap",
+          },
+          root: {
+            "& .Mui-selected": {
+              color: theme.palette.customGrey.contrastText,
+            },
+          },
+        },
       },
     },
   });
