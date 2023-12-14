@@ -13,7 +13,7 @@ export const Header = () => {
       <Logo>BOOKIFY</Logo>
       <LinksContainer>
         <ShadowButton href="/about" color="inherit">
-          <Typography variant="subtitle1">about us</Typography>
+          <Typography variant="subtitle1">new</Typography>
         </ShadowButton>
         <LowerCaseButton href="/favourites" color="inherit">
           <Typography variant="subtitle1">your favorites</Typography>
