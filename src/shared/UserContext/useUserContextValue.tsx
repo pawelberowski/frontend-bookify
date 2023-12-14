@@ -10,13 +10,13 @@ export function useUserContextValue(): UserContextData {
     authenticationApi
       .authentication()
       .then((response) => {
-        setUser(response.data);
+        return setUser(response.data);
       })
       .catch((error) => {
-        if (error.statusCode === "401") {
+        if (error.message === 'Request failed with status code 401') {
           redirect("/login");
         } else {
-          console.log(error);
+          return error;
         }
 
       });
