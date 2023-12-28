@@ -20,11 +20,11 @@ export const SortButton = styled(Button)`
 
 export const VenueTilesWrapper = styled(Box)(
   ({ theme }) => `
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${theme.spacing(2)};
-`,
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: ${theme.spacing(2)};
+  `,
 );
 
 export const PaginationWrapper = styled(Box)`
