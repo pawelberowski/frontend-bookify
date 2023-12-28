@@ -25,7 +25,7 @@ export const StyledCalendar = styled(Calendar)(
   
   .button {
     font-family: ${theme.typography.fontFamily};
-    }
+  }
     
   .react-calendar__navigation__label__labelText {
     font-family: ${theme.typography.fontFamily};
@@ -35,7 +35,7 @@ export const StyledCalendar = styled(Calendar)(
     line-height: normal;
     letter-spacing: 0.6px;
     color: ${theme.palette.customGrey.main};
-    }
+  }
     
   .react-calendar__month-view__weekdays__weekday {
     width: 48px;
@@ -62,25 +62,25 @@ export const StyledCalendar = styled(Calendar)(
   }
   
   .react-calendar__navigation__next-button {
-  background-image: url(${calendarArrow});
-  background-position: center;
+    background-image: url(${calendarArrow});
+    background-position: center;
   }
   
   .react-calendar__navigation__next2-button {
-  background-image: url(${calendarDoubleArrow});
-  background-position: center;
+    background-image: url(${calendarDoubleArrow});
+    background-position: center;
   }
   
   .react-calendar__navigation__prev-button {
-  background-image: url(${calendarArrow});
-  rotate: 180deg;
-  background-position: center;
+    background-image: url(${calendarArrow});
+    rotate: 180deg;
+    background-position: center;
   }
   
   .react-calendar__navigation__prev2-button {
-  background-image: url(${calendarDoubleArrow});
-  rotate: 180deg;
-  background-position: center;
+    background-image: url(${calendarDoubleArrow});
+    rotate: 180deg;
+    background-position: center;
   }
   
 `,
