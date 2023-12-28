@@ -2,10 +2,10 @@ import { Box, Button, styled } from "@mui/material";
 
 export const VenueTilesContainer = styled(Box)(
   ({ theme }) => `
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing(2)};
-`,
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.spacing(2)};
+  `,
 );
 
 export const ShowAndSortContainer = styled(Box)`
