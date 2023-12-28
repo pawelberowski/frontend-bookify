@@ -1,6 +1,4 @@
 import { VenueTile } from "./VenueTile";
-import { Venue } from "../../../shared/types/Venue.ts";
-import { ChangeEvent, FunctionComponent } from "react";
 import {
   PaginationWrapper,
   ShowAndSortContainer,
@@ -9,23 +7,10 @@ import {
   VenueTilesWrapper,
 } from "./VenueTiles.styled.tsx";
 import { Pagination, Typography } from "@mui/material";
-import { SetURLSearchParams } from "react-router-dom";
+import { useVenueTiles } from "./useVenueTiles.tsx";
 
-interface VenueTiles {
-  venues: Venue[];
-  numberOfVenues: number | null;
-  setSearchParams: SetURLSearchParams;
-}
-
-export const VenueTiles: FunctionComponent<VenueTiles> = ({
-  venues,
-  numberOfVenues,
-  setSearchParams,
-}) => {
-  const pagesNumber = Math.ceil((numberOfVenues ?? 1) / 18);
-
-  const changePage = (_event: ChangeEvent<unknown>, value: number) =>
-    setSearchParams({ page: String(value) });
+export const VenueTiles = () => {
+  const { venues, pagesNumber, changePage } = useVenueTiles();
 
   return (
     <VenueTilesContainer>
