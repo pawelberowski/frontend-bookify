@@ -20,9 +20,7 @@ export const MyMapContainer: FunctionComponent<MyMapContainer> = ({
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[coordinates.latitude, coordinates.longitude]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
+        <Popup />
       </Marker>
     </MapWrapper>
   );
