@@ -8,10 +8,15 @@ export const BookingSystemContainer = styled(Box)(
 export const GreyDivider = styled(Divider)(
   ({ theme }) => `
   color: ${theme.palette.customGrey.lightest};
-  margin-top: 32px;
-  margin-Bottom: 32px;
   `,
 );
+
+export const PriceWrapper = styled(Box)`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 32px;
+`;
 
 export const BookButtonContainer = styled(Box)`
   display: flex;

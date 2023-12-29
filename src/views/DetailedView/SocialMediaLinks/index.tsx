@@ -4,6 +4,7 @@ import InstagramIcon from "../../../shared/assets/instagram.svg";
 import TweeterIcon from "../../../shared/assets/tweeter.svg";
 import WebIcon from "../../../shared/assets/web.svg";
 import { Wrapper } from "./SocialMediaLinks.styled.tsx";
+
 export const SocialMediaLinks = () => {
   return (
     <Wrapper>
@@ -22,7 +23,7 @@ export const SocialMediaLinks = () => {
         <img src={InstagramIcon} alt="instagram logo" />
       </IconButton>
       <IconButton
-        href="https://tweeter.com"
+        href="https://twitter.com"
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -14,12 +14,14 @@ interface DescriptionContainer {
 export const DescriptionContainer: FunctionComponent<DescriptionContainer> = ({
   venueDetails,
 }) => {
-  const amenities = [
+  const amenitiesSet = new Set([
     ...venueDetails.features.generalAmenities,
     ...venueDetails.features.roomAmenities,
     ...venueDetails.features.handicapAccesibility,
     ...venueDetails.features.neighbourhoods,
-  ];
+  ]);
+
+  const amenities = Array.from(amenitiesSet);
 
   return (
     <DescriptionPaper square elevation={2}>

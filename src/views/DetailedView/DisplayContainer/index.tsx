@@ -1,7 +1,7 @@
 import { displayDescription, displayGallery } from "../useCurrentDisplay.tsx";
 import { DescriptionContainer } from "../DescriptionContainer";
 import { GalleryContainer } from "../GalleryContainer";
-import { MapContainer } from "../MapContainer";
+import { MyMapContainer } from "../MyMapContainer";
 import { FunctionComponent } from "react";
 import { VenueDetails } from "../../../shared/types/VenueDetails.ts";
 
@@ -19,5 +19,5 @@ export const DisplayContainer: FunctionComponent<DisplayContainer> = ({
   if (currentDisplay === displayGallery) {
     return <GalleryContainer albumId={venueDetails.albumId} />;
   }
-  return <MapContainer />;
+  return <MyMapContainer coordinates={venueDetails.location.coordinates} />;
 };

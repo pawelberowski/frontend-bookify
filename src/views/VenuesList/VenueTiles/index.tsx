@@ -1,16 +1,31 @@
 import { VenueTile } from "./VenueTile";
-import { Venue } from "../../../shared/types/Venue.ts";
-import { FunctionComponent } from "react";
-import { VenueTilesContainer } from "./VenueTiles.styled.tsx";
+import {
+  PaginationWrapper,
+  ShowAndSortContainer,
+  SortButton,
+  VenueTilesContainer,
+  VenueTilesWrapper,
+} from "./VenueTiles.styled.tsx";
+import { Pagination, Typography } from "@mui/material";
+import { useVenueTiles } from "./useVenueTiles.tsx";
 
-interface VenueTiles {
-  venues: Venue[];
-}
+export const VenueTiles = () => {
+  const { venues, pagesNumber, changePage } = useVenueTiles();
 
-export const VenueTiles: FunctionComponent<VenueTiles> = ({ venues }) => {
   return (
     <VenueTilesContainer>
-      {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
+      <ShowAndSortContainer>
+        <Typography variant="body2">show 18 on the page</Typography>
+        <SortButton variant="text">
+          <Typography variant="h5">sort</Typography>
+        </SortButton>
+      </ShowAndSortContainer>
+      <VenueTilesWrapper>
+        {venues?.map((venue) => <VenueTile key={venue.id} venue={venue} />)}
+      </VenueTilesWrapper>
+      <PaginationWrapper>
+        <Pagination color="primary" count={pagesNumber} onChange={changePage} />
+      </PaginationWrapper>
     </VenueTilesContainer>
   );
 };
