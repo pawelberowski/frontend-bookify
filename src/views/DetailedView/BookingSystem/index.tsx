@@ -15,6 +15,7 @@ import {
 } from "./bookingSystem.styled";
 import { FunctionComponent, useState } from "react";
 import { useExchangeRateContext } from "../../../shared/ExchangeRateContext/useExchangeRateContext.tsx";
+import { getPriceInPln } from "../../../shared/utils/getPriceInPln.ts";
 import { useCalendarDates } from "./useCalendarDates.tsx";
 import { getNumberOfDays } from "./getNumberOfDays.tsx";
 
@@ -33,8 +34,7 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
     setIsRange(!isRange);
   };
 
-  const priceInPLN = (Number(priceInEur) * exchangeRate.plnPerEur).toFixed(0);
-  const numberOfDays = getNumberOfDays(value);
+  const priceInPln = getPriceInPln(priceInEur, exchangeRate.plnPerEur);  const numberOfDays = getNumberOfDays(value);
 
   return (
     <BookingSystemContainer>
@@ -52,13 +52,13 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
       />
       <PriceWrapper>
         <Typography variant="body1">per day</Typography>
-        <Typography variant="body1">{`${priceInPLN} zł`}</Typography>
+        <Typography variant="body1">{`${priceInPln} zł`}</Typography>
       </PriceWrapper>
       <GreyDivider />
       <PriceWrapper>
         <Typography variant="h4">total</Typography>
         <Typography variant="h4">{`${
-          +priceInPLN * (numberOfDays ?? 1)
+          +priceInPln * (numberOfDays ?? 1)
         } zł`}</Typography>
       </PriceWrapper>
       <BookButtonContainer>

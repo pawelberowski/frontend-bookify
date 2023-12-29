@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { FunctionComponent } from "react";
 import { useExchangeRateContext } from "../../../../../shared/ExchangeRateContext/useExchangeRateContext.tsx";
+import { getPriceInPln } from "../../../../../shared/utils/getPriceInPln.ts";
 
 interface Props {
   priceInEur: string;
@@ -10,6 +11,10 @@ export const PricePerNight: FunctionComponent<Props> = ({ priceInEur }) => {
   if (!exchangeRate) {
     return null;
   }
-  const priceInPln = (Number(priceInEur) * exchangeRate.plnPerEur).toFixed(0);
-  return <Typography variant="h5">{`${priceInPln}zł / doba`}</Typography>;
+  return (
+    <Typography variant="h5">{`${getPriceInPln(
+      priceInEur,
+      exchangeRate.plnPerEur,
+    )}zł / doba`}</Typography>
+  );
 };
