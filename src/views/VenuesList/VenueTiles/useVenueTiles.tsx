@@ -9,8 +9,9 @@ export const useVenueTiles = () => {
   const currentPage = searchParams.get("page");
   const [numberOfVenues, setNumberOfVenues] = useState(null);
   const pagesNumber = Math.ceil((numberOfVenues ?? 1) / 18);
-  const changePage = (_event: ChangeEvent<unknown>, value: number) =>
+  const changePage = (_event: ChangeEvent<unknown>, value: number) => {
     setSearchParams({ page: String(value) });
+  };
 
   useEffect(() => {
     axiosInstance
