@@ -1,12 +1,12 @@
 import {
-  Accordion,
   AccordionDetails,
   AccordionSummary,
   Checkbox,
   FormControlLabel,
   Typography,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { StyledAccordion } from "../Filters.styled.tsx";
+import { ExpandIcon } from "../ExpandIcon";
 
 export const Amenities = () => {
   const generalAmenities = [
@@ -30,16 +30,16 @@ export const Amenities = () => {
   ];
 
   return (
-    <Accordion>
+    <StyledAccordion elevation={0}>
       <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
+        expandIcon={<ExpandIcon />}
         aria-controls="amenities-content"
         id="amenities-header"
       >
-        <Typography>amenities</Typography>
+        <Typography variant="body2">amenities</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>
+        <Typography variant="body2">
           {generalAmenities.map((amenity) => (
             <FormControlLabel
               key={amenity}
@@ -49,6 +49,6 @@ export const Amenities = () => {
           ))}
         </Typography>
       </AccordionDetails>
-    </Accordion>
+    </StyledAccordion>
   );
 };

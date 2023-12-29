@@ -3,6 +3,8 @@ import { styled, ToggleButton, ToggleButtonGroup } from "@mui/material";
 export const StyledButtonGroup = styled(ToggleButtonGroup)(
   ({ theme }) => `
   padding: ${theme.spacing(2)};
+  display: flex;
+  justify-content: center;
 `,
 );
 

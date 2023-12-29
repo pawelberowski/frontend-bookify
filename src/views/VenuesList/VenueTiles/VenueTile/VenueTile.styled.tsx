@@ -54,7 +54,7 @@ export const NameContainer = styled(Box)(
   justify-content: center;
   align-items: center;
   border-radius: 0 0 0 18px;
-  background: ${theme.palette.customGrey.lighter};
+  background: ${theme.palette.customGrey.light};
   text-align: end;
   text-shadow: 0 2px 4px ${theme.palette.customGrey.main};
 `,
@@ -93,7 +93,7 @@ export const RatingAndCapacityContainer = styled(Paper)(
   width: 282px;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: ${theme.palette.customGrey.lightest};
+  box-shadow: ${theme.palette.customGrey.lighter};
   border-radius: 0;
   color: #595959;
 `,

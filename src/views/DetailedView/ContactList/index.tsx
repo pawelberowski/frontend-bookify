@@ -1,8 +1,12 @@
-import { List, ListItem, ListItemIcon, Typography } from "@mui/material";
+import { ListItemIcon, Typography } from "@mui/material";
 import PhoneIcon from "../../../shared/assets/phone.svg";
 import MailIcon from "../../../shared/assets/mail.svg";
 import { FunctionComponent } from "react";
-import { EmailWrapper } from "./ContactList.styled.tsx";
+import {
+  EmailWrapper,
+  StyledList,
+  StyledListItem,
+} from "./ContactList.styled.tsx";
 
 interface ContactList {
   phoneNumber: string;
@@ -13,19 +17,19 @@ export const ContactList: FunctionComponent<ContactList> = ({
   email,
 }) => {
   return (
-    <List>
-      <ListItem>
+    <StyledList>
+      <StyledListItem>
         <ListItemIcon>
           <img src={PhoneIcon} alt="phone" />
         </ListItemIcon>
         <Typography variant="body2">{phoneNumber}</Typography>
-      </ListItem>
-      <ListItem>
+      </StyledListItem>
+      <StyledListItem>
         <ListItemIcon>
           <img src={MailIcon} alt="email" />
         </ListItemIcon>
         <EmailWrapper variant="body2">{email}</EmailWrapper>
-      </ListItem>
-    </List>
+      </StyledListItem>
+    </StyledList>
   );
 };

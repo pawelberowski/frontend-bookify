@@ -4,7 +4,5 @@ import { useExchangeRateContext } from "./useExchangeRateContext.tsx";
 export function useExchangeRateFetching() {
   const { fetchExchangeRate } = useExchangeRateContext();
 
-  useEffect(() => {
-    fetchExchangeRate();
-  }, [fetchExchangeRate]);
+  useEffect(fetchExchangeRate, [fetchExchangeRate]);
 }

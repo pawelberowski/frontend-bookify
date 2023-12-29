@@ -28,7 +28,7 @@ export const LowerCaseButton = styled(Button)`
 export const ShadowButton = styled(Button)(
   ({ theme }) => `
   color: ${theme.palette.customGrey.darker};
-  text-shadow: 0 4px 4px ${theme.palette.customGrey.lightest};
+  text-shadow: 0 4px 4px ${theme.palette.customGrey.lighter};
   text-transform: lowercase;
 `,
 );

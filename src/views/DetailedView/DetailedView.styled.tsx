@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Paper, styled, Typography } from "@mui/material";
+import { Box, Divider, styled, Typography } from "@mui/material";
 
 export const DetailedViewContainer = styled(Box)(
   ({ theme }) => `
@@ -37,16 +37,6 @@ export const ReviewsNumberWrapper = styled(Typography)`
   line-height: 150%;
   display: flex;
   justify-content: flex-end;
-`;
-
-export const DisplaySwitchesContainer = styled(Paper)`
-  display: flex;
-  justify-content: space-around;
-`;
-
-export const DisplaySwitchWrapper = styled(Button)`
-  text-transform: lowercase;
-  line-height: 150%;
 `;
 
 export const LabelDivider = styled(Divider)(

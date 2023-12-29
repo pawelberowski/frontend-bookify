@@ -33,37 +33,6 @@ export const Motto = styled((props: TypographyProps) => (
   margin-right: ${({ theme }) => theme.spacing(25)};
 `;
 
-export const FiltersBarWrapper = styled(Box)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const FiltersBar = styled(Box)`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`;
-export const FilterWrapper = styled(Box)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border-radius: 18px;
-  width: 160px;
-  height: 40px;
-`;
-
-export const StyledInput = styled("input")`
-  border: none;
-  width: 100px;
-`;
-
-export const ToggleButton = styled(Button)`
-  text-transform: none;
-`;
-
 export const SearchButton = styled(Button)(
   ({ theme }) => `
   border-radius: 18px;
