@@ -19,16 +19,16 @@ export const StyledFiltersBar = styled(Box)`
 `;
 export const FilterWrapper = styled(Box)(
   ({ theme }) => `
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${theme.palette.customGrey.contrastText};
-  border-radius: 18px;
-  box-shadow: 0 2px 4px 0 ${theme.palette.customGrey.lightest};
-  border: 1px solid ${theme.palette.customGrey.lighter};
-  width: 180px;
-  height: 40px;
-`,
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.palette.customGrey.contrastText};
+    border-radius: 18px;
+    box-shadow: 0 2px 4px 0 ${theme.palette.customGrey.lightest};
+    border: 1px solid ${theme.palette.customGrey.lighter};
+    width: 180px;
+    height: 40px;
+  `,
 );
 
 export const StyledInput = styled("input")`
