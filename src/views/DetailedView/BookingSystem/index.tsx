@@ -34,7 +34,8 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
     setIsRange(!isRange);
   };
 
-  const priceInPln = getPriceInPln(priceInEur, exchangeRate.plnPerEur);  const numberOfDays = getNumberOfDays(value);
+  const priceInPln = getPriceInPln(priceInEur, exchangeRate.plnPerEur);
+  const numberOfDays = getNumberOfDays(value);
 
   return (
     <BookingSystemContainer>
