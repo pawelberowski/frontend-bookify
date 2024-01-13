@@ -1,7 +1,14 @@
-import { Box, styled } from "@mui/material";
+import { Accordion, Box, styled } from "@mui/material";
 
 export const FiltersContainer = styled(Box)`
-  max-width: 282px;
-  background-color: white;
-  color: #1a1a1a;
+  width: 282px;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(8)};
+`;
+
+export const StyledAccordion = styled(Accordion)`
+  &:before {
+    display: none;
+  }
 `;

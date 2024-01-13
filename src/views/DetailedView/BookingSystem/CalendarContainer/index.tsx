@@ -1,21 +1,25 @@
-import { useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import {
   CalendarWrapper,
   StyledCalendar,
 } from "./CalendarContainer.styled.tsx";
+import { DatesValues } from "../useCalendarDates.tsx";
+import { FunctionComponent } from "react";
 
-type ValuePiece = Date | null;
-
-type Value = ValuePiece | [ValuePiece, ValuePiece];
-
-export const CalendarContainer = () => {
-  const [value, onChange] = useState<Value>(new Date());
-
+interface Props {
+  value: DatesValues;
+  handleChange: (newValue: DatesValues) => void;
+  isRange: boolean;
+}
+export const CalendarContainer: FunctionComponent<Props> = ({
+  value,
+  handleChange,
+  isRange,
+}) => {
   return (
     <CalendarWrapper>
       <StyledCalendar
-        onChange={onChange}
+        onChange={handleChange}
         value={value}
         calendarType="gregory"
         prevLabel=""
@@ -25,6 +29,7 @@ export const CalendarContainer = () => {
         formatShortWeekday={(_locale, date) =>
           [`S`, `M`, `T`, `W`, `T`, `F`, `S`][date.getDay()]
         }
+        selectRange={isRange}
       />
     </CalendarWrapper>
   );

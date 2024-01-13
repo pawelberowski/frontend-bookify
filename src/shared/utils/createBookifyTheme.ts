@@ -11,8 +11,9 @@ export const createBookifyTheme = () => {
       customGrey: {
         main: "rgba(0, 0, 0, 0.60)",
         darker: "rgba(0, 0, 0, 0.75)",
-        lighter: "rgba(0, 0, 0, 0.50)",
-        lightest: "rgba(0, 0, 0, 0.25)",
+        light: "rgba(0, 0, 0, 0.50)",
+        lighter: "rgba(0, 0, 0, 0.25)",
+        lightest: "rgba(0, 0, 0, 0.1)",
         contrastText: "#fff",
       },
     },

@@ -13,31 +13,44 @@ import {
   GreyDivider,
   PriceWrapper,
 } from "./bookingSystem.styled";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { useExchangeRateContext } from "../../../shared/ExchangeRateContext/useExchangeRateContext.tsx";
 import { getPriceInPln } from "../../../shared/utils/getPriceInPln.ts";
+import { useCalendarDates } from "./useCalendarDates.tsx";
+import { getNumberOfDays } from "./getNumberOfDays.tsx";
 
 interface Props {
   priceInEur: string | number;
 }
 export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
   const { exchangeRate } = useExchangeRateContext();
-
+  const { value, handleChange } = useCalendarDates();
+  const [isRange, setIsRange] = useState(true);
   if (!exchangeRate) {
     return null;
   }
+
+  const handleCheckbox = () => {
+    setIsRange(!isRange);
+  };
+
   const priceInPln = getPriceInPln(priceInEur, exchangeRate.plnPerEur);
+  const numberOfDays = getNumberOfDays(value);
 
   return (
     <BookingSystemContainer>
-      <ToggleButtons />
+      <ToggleButtons value={value} />
       <FormGroup>
         <FormControlLabel
-          control={<Checkbox />}
+          control={<Checkbox onChange={handleCheckbox} />}
           label={<Typography variant="body2">just one day</Typography>}
         />
       </FormGroup>
-      <CalendarContainer />
+      <CalendarContainer
+        value={value}
+        handleChange={handleChange}
+        isRange={isRange}
+      />
       <PriceWrapper>
         <Typography variant="body1">per day</Typography>
         <Typography variant="body1">{`${priceInPln} zł`}</Typography>
@@ -45,7 +58,9 @@ export const BookingSystem: FunctionComponent<Props> = ({ priceInEur }) => {
       <GreyDivider />
       <PriceWrapper>
         <Typography variant="h4">total</Typography>
-        <Typography variant="h4">{`${priceInPln} zł`}</Typography>
+        <Typography variant="h4">{`${
+          +priceInPln * (numberOfDays ?? 1)
+        } zł`}</Typography>
       </PriceWrapper>
       <BookButtonContainer>
         <BookButton variant="contained">
